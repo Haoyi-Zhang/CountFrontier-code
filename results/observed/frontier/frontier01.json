@@ -1,0 +1,404 @@
+{
+  "baselines": {
+    "common_uniform_blocks": 4,
+    "common_width": 1,
+    "count_only_adequate": false,
+    "least_blocks": 3,
+    "library_top_adequate": true,
+    "ordered_positions": 4,
+    "source_uniform_blocks": 4,
+    "source_widths": [
+      1
+    ]
+  },
+  "case": {
+    "classes": 2,
+    "disciplines": [
+      "fifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "frontier01",
+    "lengths": [
+      4
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  "certificate": {
+    "case": "frontier01",
+    "cuts": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "layers": [
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          0,
+          0
+        ]
+      ]
+    ],
+    "merge_word": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "required": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "status": "adequate",
+    "witnesses": [
+      {
+        "actions": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "cut": [
+          0,
+          1
+        ],
+        "left": [
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "query": 2,
+        "right": [
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "time": 3
+      },
+      {
+        "actions": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "cut": [
+          0,
+          2
+        ],
+        "left": [
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "query": 2,
+        "right": [
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "time": 3
+      }
+    ]
+  },
+  "certificate_bytes": 493,
+  "checker": {
+    "earlier_query_checks": 4,
+    "states": 13,
+    "transitions": 28,
+    "witness_replay_ticks": 12
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 4328,
+  "oracle": {
+    "abstract_query_evaluations": 1536,
+    "candidate_count": 8,
+    "candidates": [
+      {
+        "adequate": false,
+        "cuts": []
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    ],
+    "colorings": 6,
+    "packet_replay_ticks": 1152,
+    "service_paths": 64,
+    "word_candidate_obligations": 3072
+  },
+  "producer": {
+    "max_layer_states": 6,
+    "output_frontiers": {
+      "1": [
+        0
+      ],
+      "3": [
+        0,
+        1,
+        2
+      ]
+    },
+    "states": 13,
+    "transitions": 28
+  },
+  "producer_cpu_ns": 0
+}

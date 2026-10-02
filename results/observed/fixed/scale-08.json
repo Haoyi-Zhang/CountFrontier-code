@@ -1,0 +1,274 @@
+{
+  "baselines": {
+    "common_uniform_blocks": 12,
+    "common_width": 1,
+    "count_only_adequate": false,
+    "least_blocks": 3,
+    "library_top_adequate": false,
+    "ordered_positions": 12,
+    "source_uniform_blocks": 12,
+    "source_widths": [
+      1
+    ]
+  },
+  "case": {
+    "active": [
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true
+    ],
+    "arrivals": [
+      {
+        "queue": 0,
+        "time": 1,
+        "token": 6
+      },
+      {
+        "queue": 0,
+        "time": 3,
+        "token": 7
+      },
+      {
+        "queue": 0,
+        "time": 5,
+        "token": 8
+      },
+      {
+        "queue": 0,
+        "time": 7,
+        "token": 9
+      },
+      {
+        "queue": 0,
+        "time": 9,
+        "token": 10
+      },
+      {
+        "queue": 0,
+        "time": 11,
+        "token": 11
+      }
+    ],
+    "classes": 4,
+    "groups": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    ],
+    "horizon": 24,
+    "id": "scale-08",
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "terms": [
+          {
+            "end": 24,
+            "event": "depart",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 24,
+            "event": "occupancy",
+            "queue": -1,
+            "start": 24,
+            "weights": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 24,
+            "event": "drop",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 24,
+            "event": "transfer",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "queues": [
+      {
+        "capacity": 6,
+        "discipline": "fifo",
+        "initial": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "sink": null,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  "certificate": {
+    "case": "scale-08",
+    "missing": [
+      0,
+      7
+    ],
+    "required": [
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ]
+    ],
+    "status": "insufficient_library",
+    "witness": {
+      "group": 0,
+      "left": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "query": 0,
+      "rank": 7,
+      "right": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "certificate_bytes": 200,
+  "checker": {
+    "coefficient_cells": 192,
+    "event_records": 52,
+    "simulation_ticks": 24,
+    "witness_pairs": 1
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 118,
+  "oracle": null,
+  "producer": {
+    "coefficient_cells": 192,
+    "event_records": 52,
+    "simulation_ticks": 24
+  },
+  "producer_cpu_ns": 0
+}

@@ -1,0 +1,535 @@
+{
+  "mutations": [
+    {
+      "outcome": "rejected",
+      "test": "constant_offset"
+    },
+    {
+      "outcome": "rejected",
+      "test": "block_coefficient"
+    },
+    {
+      "outcome": "rejected",
+      "test": "required_cut_omission"
+    },
+    {
+      "outcome": "rejected",
+      "test": "necessity_pair_omission"
+    },
+    {
+      "outcome": "rejected",
+      "test": "nonseparating_pair"
+    },
+    {
+      "outcome": "rejected",
+      "test": "invalid_packet_class"
+    },
+    {
+      "outcome": "rejected",
+      "test": "query_mutation"
+    },
+    {
+      "outcome": "rejected",
+      "test": "class_sensitive_policy"
+    },
+    {
+      "outcome": "rejected",
+      "test": "reachable_layer_omission"
+    },
+    {
+      "outcome": "rejected",
+      "test": "fabricated_reachable_state"
+    },
+    {
+      "outcome": "rejected",
+      "test": "merge_order_mutation"
+    },
+    {
+      "outcome": "rejected",
+      "test": "frontier_required_omission"
+    },
+    {
+      "outcome": "rejected",
+      "test": "unneeded_candidate_cut"
+    },
+    {
+      "outcome": "rejected",
+      "test": "service_budget_violation"
+    },
+    {
+      "outcome": "rejected",
+      "test": "shorter_unqueried_endpoint"
+    },
+    {
+      "outcome": "rejected",
+      "test": "frontier_nonsenseparation"
+    },
+    {
+      "outcome": "rejected",
+      "test": "earlier_query_added"
+    },
+    {
+      "outcome": "rejected",
+      "test": "library_cut_removed"
+    },
+    {
+      "outcome": "rejected",
+      "test": "taildrop_schema_extension"
+    },
+    {
+      "outcome": "rejected",
+      "test": "downstream_lifo_schema_extension"
+    },
+    {
+      "outcome": "rejected",
+      "test": "arrivals_schema_extension"
+    },
+    {
+      "outcome": "rejected",
+      "test": "frontier_class_sensitive_policy"
+    },
+    {
+      "outcome": "INCOMPLETE",
+      "test": "producer_transition_limit"
+    },
+    {
+      "outcome": "INCOMPLETE",
+      "test": "checker_transition_limit"
+    },
+    {
+      "outcome": "rejected",
+      "test": "restricted_false_insufficiency"
+    }
+  ],
+  "negative_controls": [
+    {
+      "certificate": {
+        "case": "restricted-library-gap",
+        "pair": {
+          "context": 0,
+          "cuts": [],
+          "left": 0,
+          "right": 1
+        },
+        "status": "insufficient_library"
+      },
+      "checker": {
+        "replay_ticks": 4,
+        "word_checks": 2
+      },
+      "control": "restricted_insufficient_library",
+      "model": {
+        "capacity": 3,
+        "classes": 2,
+        "horizon": 2,
+        "id": "restricted-library-gap",
+        "library": [
+          1
+        ],
+        "modes": [
+          {
+            "context": 0,
+            "service": [
+              true,
+              true
+            ],
+            "words": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "departed_tokens": [
+        0,
+        2
+      ],
+      "merge_prefix_extension": "refuted",
+      "model": {
+        "active": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "arrivals": [],
+        "classes": 2,
+        "groups": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "horizon": 4,
+        "id": "taildrop-boundary",
+        "library": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "policy": "priority",
+        "queries": [
+          {
+            "terms": [
+              {
+                "end": 4,
+                "event": "depart",
+                "queue": -1,
+                "start": 1,
+                "weights": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "queues": [
+          {
+            "capacity": 3,
+            "discipline": "fifo",
+            "initial": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "sink": {
+          "active": [
+            false,
+            false,
+            true,
+            true
+          ],
+          "capacity": 1,
+          "discipline": "fifo"
+        },
+        "weights": [
+          1
+        ],
+        "workload": {
+          "kind": "full"
+        }
+      }
+    },
+    {
+      "departed_tokens": [
+        1
+      ],
+      "merge_prefix_extension": "refuted",
+      "model": {
+        "active": [
+          true,
+          true,
+          false
+        ],
+        "arrivals": [],
+        "classes": 2,
+        "groups": [
+          [
+            0,
+            1
+          ]
+        ],
+        "horizon": 3,
+        "id": "lifo-boundary",
+        "library": [
+          [
+            0,
+            1
+          ]
+        ],
+        "policy": "priority",
+        "queries": [
+          {
+            "terms": [
+              {
+                "end": 3,
+                "event": "depart",
+                "queue": -1,
+                "start": 1,
+                "weights": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "queues": [
+          {
+            "capacity": 2,
+            "discipline": "fifo",
+            "initial": [
+              0,
+              1
+            ]
+          }
+        ],
+        "sink": {
+          "active": [
+            false,
+            false,
+            true
+          ],
+          "capacity": 2,
+          "discipline": "lifo"
+        },
+        "weights": [
+          1
+        ],
+        "workload": {
+          "kind": "full"
+        }
+      }
+    },
+    {
+      "departure_sequences": [
+        [
+          1,
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "fixed_merge_extension": "refuted",
+      "model": {
+        "active": [
+          true,
+          true
+        ],
+        "arrivals": [
+          {
+            "queue": 0,
+            "time": 2,
+            "token": 0
+          }
+        ],
+        "classes": 2,
+        "groups": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "horizon": 2,
+        "id": "arrival-boundary",
+        "library": [],
+        "policy": "priority",
+        "queries": [
+          {
+            "terms": [
+              {
+                "end": 2,
+                "event": "depart",
+                "queue": -1,
+                "start": 1,
+                "weights": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "queues": [
+          {
+            "capacity": 1,
+            "discipline": "fifo",
+            "initial": []
+          },
+          {
+            "capacity": 1,
+            "discipline": "fifo",
+            "initial": [
+              1
+            ]
+          }
+        ],
+        "sink": null,
+        "weights": [
+          1,
+          2
+        ],
+        "workload": {
+          "kind": "full"
+        }
+      },
+      "schedules": [
+        [
+          true,
+          true
+        ],
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "control": "class_sensitive_OR",
+      "mixed_difference": -1,
+      "truth_table": [
+        {
+          "first_class_one": 0,
+          "left": 0,
+          "right": 0
+        },
+        {
+          "first_class_one": 1,
+          "left": 0,
+          "right": 1
+        },
+        {
+          "first_class_one": 1,
+          "left": 1,
+          "right": 0
+        },
+        {
+          "first_class_one": 1,
+          "left": 1,
+          "right": 1
+        }
+      ]
+    },
+    {
+      "control": "no_centering",
+      "correct_required": [],
+      "model": {
+        "active": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "arrivals": [],
+        "classes": 2,
+        "groups": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "horizon": 6,
+        "id": "centering-control",
+        "library": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "policy": "priority",
+        "queries": [
+          {
+            "terms": [
+              {
+                "end": 6,
+                "event": "occupancy",
+                "queue": -1,
+                "start": 1,
+                "weights": [
+                  1,
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "queues": [
+          {
+            "capacity": 6,
+            "discipline": "fifo",
+            "initial": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        ],
+        "sink": null,
+        "weights": [
+          1
+        ],
+        "workload": {
+          "kind": "full"
+        }
+      },
+      "uncentered_cuts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "case": "monochrome-control",
+      "control": "ignore_active_palette",
+      "correct_required": [],
+      "full_palette_required": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          2,
+          21
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    }
+  ],
+  "obligations": 5394
+}

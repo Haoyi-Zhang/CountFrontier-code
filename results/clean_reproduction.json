@@ -1,0 +1,2181 @@
+{
+  "controls": {
+    "control_count": 25,
+    "frontier_earlier_declared_query_check": "explicitly replayed and charged",
+    "frontier_strict_integer_contract_regression": {
+      "baseline_frontier03_decoded": 22,
+      "baseline_frontier03_states": 72,
+      "baseline_frontier07_states": 1553,
+      "scope": "directed implementation regression; separate from the 23 retained campaign mutations",
+      "strict_mutations_rejected": 30
+    },
+    "incomplete_resource_controls": 2,
+    "rejected_certificate_or_schema_mutations": 23,
+    "restricted_negative_certificate_regression": "accepted genuine insufficiency and rejected forged insufficiency"
+  },
+  "execution_mode_comparison": {
+    "case_table_rows_compared_per_run": 59,
+    "normal": {
+      "hash_seed": "inherited",
+      "python_optimization": false,
+      "status": "scientific_results_equal"
+    },
+    "optimized_seed_17": {
+      "hash_seed": "17",
+      "python_optimization": true,
+      "status": "scientific_results_equal"
+    },
+    "scientific_json_files_compared_per_run": 82,
+    "seed_991": {
+      "hash_seed": "991",
+      "python_optimization": false,
+      "status": "scientific_results_equal"
+    },
+    "volatile_fields_excluded": [
+      "producer_cpu_ns",
+      "checker_cpu_ns",
+      "cpu_seconds",
+      "wall_seconds",
+      "peak_rss_kib",
+      "timed_cpu_seconds",
+      "whole_process_cpu_seconds",
+      "executed_obligations_this_invocation",
+      "resumed"
+    ]
+  },
+  "exhaustive_micro_audit": {
+    "abstract_query_evaluations": 17458,
+    "candidate_comparisons": 13644,
+    "candidate_pairs": 118,
+    "cases": [
+      {
+        "abstract_query_evaluations": 512,
+        "candidate_comparisons": 512,
+        "candidate_count": 4,
+        "case": "audit01",
+        "checker_states": 7,
+        "checker_transitions": 12,
+        "colorings": 8,
+        "concrete_traces": 128,
+        "disciplines": [
+          "fifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 2,
+        "lengths": [
+          3
+        ],
+        "negative_library": {
+          "checker_states": 7,
+          "checker_transitions": 12,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 7,
+          "producer_transitions": 12,
+          "status": "insufficient_library"
+        },
+        "obligations": 1368,
+        "packet_replay_ticks": 256,
+        "policy": "priority",
+        "producer_states": 7,
+        "producer_transitions": 12,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 16,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 18,
+        "candidate_comparisons": 12,
+        "candidate_count": 4,
+        "case": "audit02",
+        "checker_states": 4,
+        "checker_transitions": 3,
+        "colorings": 3,
+        "concrete_traces": 3,
+        "disciplines": [
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          3
+        ],
+        "negative_library": {
+          "checker_states": 4,
+          "checker_transitions": 3,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 4,
+          "producer_transitions": 3,
+          "status": "insufficient_library"
+        },
+        "obligations": 93,
+        "packet_replay_ticks": 9,
+        "policy": "rr",
+        "producer_states": 4,
+        "producer_transitions": 3,
+        "required": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "service_words": 1,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 384,
+        "candidate_comparisons": 512,
+        "candidate_count": 8,
+        "case": "audit03",
+        "checker_states": 9,
+        "checker_transitions": 9,
+        "colorings": 16,
+        "concrete_traces": 64,
+        "disciplines": [
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 3,
+        "lengths": [
+          4
+        ],
+        "negative_library": {
+          "checker_states": 9,
+          "checker_transitions": 9,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 9,
+          "producer_transitions": 9,
+          "status": "insufficient_library"
+        },
+        "obligations": 1182,
+        "packet_replay_ticks": 192,
+        "policy": "wrr",
+        "producer_states": 9,
+        "producer_transitions": 9,
+        "required": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "service_words": 4,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 2304,
+        "candidate_comparisons": 3072,
+        "candidate_count": 8,
+        "case": "audit04",
+        "checker_states": 16,
+        "checker_transitions": 32,
+        "colorings": 6,
+        "concrete_traces": 384,
+        "disciplines": [
+          "lifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 3,
+        "lengths": [
+          4
+        ],
+        "negative_library": {
+          "checker_states": 16,
+          "checker_transitions": 32,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            0,
+            2
+          ],
+          "producer_states": 16,
+          "producer_transitions": 32,
+          "status": "insufficient_library"
+        },
+        "obligations": 6746,
+        "packet_replay_ticks": 1152,
+        "policy": "priority",
+        "producer_states": 16,
+        "producer_transitions": 32,
+        "required": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "service_words": 64,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 48,
+        "candidate_comparisons": 24,
+        "candidate_count": 2,
+        "case": "audit05",
+        "checker_states": 6,
+        "checker_transitions": 5,
+        "colorings": 4,
+        "concrete_traces": 12,
+        "disciplines": [
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 2,
+        "lengths": [
+          2
+        ],
+        "negative_library": {
+          "checker_states": 6,
+          "checker_transitions": 5,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 6,
+          "producer_transitions": 5,
+          "status": "insufficient_library"
+        },
+        "obligations": 152,
+        "packet_replay_ticks": 24,
+        "policy": "rr",
+        "producer_states": 6,
+        "producer_transitions": 5,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 3,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 128,
+        "candidate_comparisons": 64,
+        "candidate_count": 2,
+        "case": "audit06",
+        "checker_states": 8,
+        "checker_transitions": 12,
+        "colorings": 2,
+        "concrete_traces": 32,
+        "disciplines": [
+          "lifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 2,
+        "lengths": [
+          2
+        ],
+        "negative_library": {
+          "checker_states": 8,
+          "checker_transitions": 12,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 8,
+          "producer_transitions": 12,
+          "status": "insufficient_library"
+        },
+        "obligations": 348,
+        "packet_replay_ticks": 64,
+        "policy": "wrr",
+        "producer_states": 8,
+        "producer_transitions": 12,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 16,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 288,
+        "candidate_comparisons": 192,
+        "candidate_count": 4,
+        "case": "audit07",
+        "checker_states": 20,
+        "checker_transitions": 27,
+        "colorings": 3,
+        "concrete_traces": 48,
+        "disciplines": [
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 3,
+        "lengths": [
+          3
+        ],
+        "negative_library": {
+          "checker_states": 20,
+          "checker_transitions": 27,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 20,
+          "producer_transitions": 27,
+          "status": "insufficient_library"
+        },
+        "obligations": 834,
+        "packet_replay_ticks": 144,
+        "policy": "priority",
+        "producer_states": 20,
+        "producer_transitions": 27,
+        "required": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "service_words": 16,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 96,
+        "candidate_comparisons": 128,
+        "candidate_count": 8,
+        "case": "audit08",
+        "checker_states": 4,
+        "checker_transitions": 3,
+        "colorings": 16,
+        "concrete_traces": 16,
+        "disciplines": [
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          4
+        ],
+        "negative_library": {
+          "checker_states": 4,
+          "checker_transitions": 3,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            0,
+            2
+          ],
+          "producer_states": 4,
+          "producer_transitions": 3,
+          "status": "insufficient_library"
+        },
+        "obligations": 326,
+        "packet_replay_ticks": 48,
+        "policy": "rr",
+        "producer_states": 4,
+        "producer_transitions": 3,
+        "required": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "service_words": 1,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 512,
+        "candidate_comparisons": 256,
+        "candidate_count": 2,
+        "case": "audit09",
+        "checker_states": 7,
+        "checker_transitions": 12,
+        "colorings": 8,
+        "concrete_traces": 128,
+        "disciplines": [
+          "fifo",
+          "fifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 2,
+        "lengths": [
+          2,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 7,
+          "checker_transitions": 12,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 7,
+          "producer_transitions": 12,
+          "status": "insufficient_library"
+        },
+        "obligations": 1112,
+        "packet_replay_ticks": 256,
+        "policy": "priority",
+        "producer_states": 7,
+        "producer_transitions": 12,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 16,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 12,
+        "candidate_comparisons": 4,
+        "candidate_count": 2,
+        "case": "audit10",
+        "checker_states": 4,
+        "checker_transitions": 3,
+        "colorings": 2,
+        "concrete_traces": 2,
+        "disciplines": [
+          "fifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          1,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 4,
+          "checker_transitions": 3,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            1,
+            1
+          ],
+          "producer_states": 4,
+          "producer_transitions": 3,
+          "status": "insufficient_library"
+        },
+        "obligations": 70,
+        "packet_replay_ticks": 6,
+        "policy": "rr",
+        "producer_states": 4,
+        "producer_transitions": 3,
+        "required": [
+          [
+            1,
+            1
+          ]
+        ],
+        "service_words": 1,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 192,
+        "candidate_comparisons": 192,
+        "candidate_count": 4,
+        "case": "audit11",
+        "checker_states": 6,
+        "checker_transitions": 5,
+        "colorings": 16,
+        "concrete_traces": 48,
+        "disciplines": [
+          "lifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 2,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 6,
+          "checker_transitions": 5,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 6,
+          "producer_transitions": 5,
+          "status": "insufficient_library"
+        },
+        "obligations": 536,
+        "packet_replay_ticks": 96,
+        "policy": "wrr",
+        "producer_states": 6,
+        "producer_transitions": 5,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 3,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 1152,
+        "candidate_comparisons": 768,
+        "candidate_count": 4,
+        "case": "audit12",
+        "checker_states": 16,
+        "checker_transitions": 32,
+        "colorings": 3,
+        "concrete_traces": 192,
+        "disciplines": [
+          "lifo",
+          "lifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 3,
+        "lengths": [
+          3,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 16,
+          "checker_transitions": 32,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 16,
+          "producer_transitions": 32,
+          "status": "insufficient_library"
+        },
+        "obligations": 2714,
+        "packet_replay_ticks": 576,
+        "policy": "wrr",
+        "producer_states": 16,
+        "producer_transitions": 32,
+        "required": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "service_words": 64,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 384,
+        "candidate_comparisons": 256,
+        "candidate_count": 4,
+        "case": "audit13",
+        "checker_states": 9,
+        "checker_transitions": 9,
+        "colorings": 16,
+        "concrete_traces": 64,
+        "disciplines": [
+          "fifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          1,
+          3
+        ],
+        "negative_library": {
+          "checker_states": 9,
+          "checker_transitions": 9,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            1,
+            1
+          ],
+          "producer_states": 9,
+          "producer_transitions": 9,
+          "status": "insufficient_library"
+        },
+        "obligations": 924,
+        "packet_replay_ticks": 192,
+        "policy": "priority",
+        "producer_states": 9,
+        "producer_transitions": 9,
+        "required": [
+          [
+            1,
+            1
+          ]
+        ],
+        "service_words": 4,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 144,
+        "candidate_comparisons": 144,
+        "candidate_count": 4,
+        "case": "audit14",
+        "checker_states": 12,
+        "checker_transitions": 13,
+        "colorings": 4,
+        "concrete_traces": 36,
+        "disciplines": [
+          "fifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 2,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 12,
+          "checker_transitions": 13,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 12,
+          "producer_transitions": 13,
+          "status": "insufficient_library"
+        },
+        "obligations": 472,
+        "packet_replay_ticks": 72,
+        "policy": "rr",
+        "producer_states": 12,
+        "producer_transitions": 13,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 9,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 768,
+        "candidate_comparisons": 256,
+        "candidate_count": 2,
+        "case": "audit15",
+        "checker_states": 16,
+        "checker_transitions": 32,
+        "colorings": 2,
+        "concrete_traces": 128,
+        "disciplines": [
+          "lifo",
+          "fifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 3,
+        "lengths": [
+          2,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 16,
+          "checker_transitions": 32,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 16,
+          "producer_transitions": 32,
+          "status": "insufficient_library"
+        },
+        "obligations": 1612,
+        "packet_replay_ticks": 384,
+        "policy": "wrr",
+        "producer_states": 16,
+        "producer_transitions": 32,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 64,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 32,
+        "candidate_comparisons": 16,
+        "candidate_count": 2,
+        "case": "audit16",
+        "checker_states": 3,
+        "checker_transitions": 2,
+        "colorings": 8,
+        "concrete_traces": 8,
+        "disciplines": [
+          "lifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 2,
+        "lengths": [
+          1,
+          2
+        ],
+        "negative_library": null,
+        "obligations": 74,
+        "packet_replay_ticks": 16,
+        "policy": "priority",
+        "producer_states": 3,
+        "producer_transitions": 2,
+        "required": [],
+        "service_words": 1,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 96,
+        "candidate_comparisons": 64,
+        "candidate_count": 4,
+        "case": "audit17",
+        "checker_states": 9,
+        "checker_transitions": 9,
+        "colorings": 4,
+        "concrete_traces": 16,
+        "disciplines": [
+          "fifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 3,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 9,
+          "checker_transitions": 9,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 9,
+          "producer_transitions": 9,
+          "status": "insufficient_library"
+        },
+        "obligations": 292,
+        "packet_replay_ticks": 48,
+        "policy": "wrr",
+        "producer_states": 9,
+        "producer_transitions": 9,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 4,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 1024,
+        "candidate_comparisons": 1024,
+        "candidate_count": 4,
+        "case": "audit18",
+        "checker_states": 7,
+        "checker_transitions": 12,
+        "colorings": 16,
+        "concrete_traces": 256,
+        "disciplines": [
+          "fifo",
+          "lifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 2,
+        "lengths": [
+          3,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 7,
+          "checker_transitions": 12,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 7,
+          "producer_transitions": 12,
+          "status": "insufficient_library"
+        },
+        "obligations": 2648,
+        "packet_replay_ticks": 512,
+        "policy": "rr",
+        "producer_states": 7,
+        "producer_transitions": 12,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 16,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 72,
+        "candidate_comparisons": 48,
+        "candidate_count": 4,
+        "case": "audit19",
+        "checker_states": 9,
+        "checker_transitions": 9,
+        "colorings": 3,
+        "concrete_traces": 12,
+        "disciplines": [
+          "lifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          1,
+          3
+        ],
+        "negative_library": {
+          "checker_states": 9,
+          "checker_transitions": 9,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            1,
+            1
+          ],
+          "producer_states": 9,
+          "producer_transitions": 9,
+          "status": "insufficient_library"
+        },
+        "obligations": 248,
+        "packet_replay_ticks": 36,
+        "policy": "wrr",
+        "producer_states": 9,
+        "producer_transitions": 9,
+        "required": [
+          [
+            1,
+            1
+          ]
+        ],
+        "service_words": 4,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 288,
+        "candidate_comparisons": 144,
+        "candidate_count": 2,
+        "case": "audit20",
+        "checker_states": 12,
+        "checker_transitions": 13,
+        "colorings": 8,
+        "concrete_traces": 72,
+        "disciplines": [
+          "lifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 2,
+        "lengths": [
+          2,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 12,
+          "checker_transitions": 13,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 12,
+          "producer_transitions": 13,
+          "status": "insufficient_library"
+        },
+        "obligations": 688,
+        "packet_replay_ticks": 144,
+        "policy": "priority",
+        "producer_states": 12,
+        "producer_transitions": 13,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 9,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 128,
+        "candidate_comparisons": 64,
+        "candidate_count": 2,
+        "case": "audit21",
+        "checker_states": 8,
+        "checker_transitions": 12,
+        "colorings": 2,
+        "concrete_traces": 32,
+        "disciplines": [
+          "fifo",
+          "fifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 2,
+        "lengths": [
+          1,
+          2
+        ],
+        "negative_library": null,
+        "obligations": 296,
+        "packet_replay_ticks": 64,
+        "policy": "wrr",
+        "producer_states": 8,
+        "producer_transitions": 12,
+        "required": [],
+        "service_words": 16,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 96,
+        "candidate_comparisons": 64,
+        "candidate_count": 4,
+        "case": "audit22",
+        "checker_states": 4,
+        "checker_transitions": 3,
+        "colorings": 16,
+        "concrete_traces": 16,
+        "disciplines": [
+          "lifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 4,
+          "checker_transitions": 3,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 4,
+          "producer_transitions": 3,
+          "status": "insufficient_library"
+        },
+        "obligations": 258,
+        "packet_replay_ticks": 48,
+        "policy": "rr",
+        "producer_states": 4,
+        "producer_transitions": 3,
+        "required": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "service_words": 1,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 36,
+        "candidate_comparisons": 36,
+        "candidate_count": 4,
+        "case": "audit23",
+        "checker_states": 6,
+        "checker_transitions": 5,
+        "colorings": 3,
+        "concrete_traces": 9,
+        "disciplines": [
+          "fifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 2,
+        "lengths": [
+          3,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 6,
+          "checker_transitions": 5,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 6,
+          "producer_transitions": 5,
+          "status": "insufficient_library"
+        },
+        "obligations": 146,
+        "packet_replay_ticks": 18,
+        "policy": "wrr",
+        "producer_states": 6,
+        "producer_transitions": 5,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 3,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 6144,
+        "candidate_comparisons": 4096,
+        "candidate_count": 4,
+        "case": "audit24",
+        "checker_states": 13,
+        "checker_transitions": 28,
+        "colorings": 16,
+        "concrete_traces": 1024,
+        "disciplines": [
+          "fifo",
+          "lifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 3,
+        "lengths": [
+          1,
+          3
+        ],
+        "negative_library": {
+          "checker_states": 13,
+          "checker_transitions": 28,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            1,
+            2
+          ],
+          "producer_states": 13,
+          "producer_transitions": 28,
+          "status": "insufficient_library"
+        },
+        "obligations": 13496,
+        "packet_replay_ticks": 3072,
+        "policy": "priority",
+        "producer_states": 13,
+        "producer_transitions": 28,
+        "required": [
+          [
+            1,
+            2
+          ]
+        ],
+        "service_words": 64,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 192,
+        "candidate_comparisons": 192,
+        "candidate_count": 4,
+        "case": "audit25",
+        "checker_states": 6,
+        "checker_transitions": 5,
+        "colorings": 16,
+        "concrete_traces": 48,
+        "disciplines": [
+          "lifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 2,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 6,
+          "checker_transitions": 5,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 6,
+          "producer_transitions": 5,
+          "status": "insufficient_library"
+        },
+        "obligations": 536,
+        "packet_replay_ticks": 96,
+        "policy": "wrr",
+        "producer_states": 6,
+        "producer_transitions": 5,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 3,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 192,
+        "candidate_comparisons": 64,
+        "candidate_count": 2,
+        "case": "audit26",
+        "checker_states": 21,
+        "checker_transitions": 27,
+        "colorings": 2,
+        "concrete_traces": 32,
+        "disciplines": [
+          "fifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 3,
+        "lengths": [
+          2,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 21,
+          "checker_transitions": 27,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 21,
+          "producer_transitions": 27,
+          "status": "insufficient_library"
+        },
+        "obligations": 556,
+        "packet_replay_ticks": 96,
+        "policy": "rr",
+        "producer_states": 21,
+        "producer_transitions": 27,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 16,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 512,
+        "candidate_comparisons": 256,
+        "candidate_count": 2,
+        "case": "audit27",
+        "checker_states": 8,
+        "checker_transitions": 12,
+        "colorings": 8,
+        "concrete_traces": 128,
+        "disciplines": [
+          "lifo",
+          "fifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 2,
+        "lengths": [
+          1,
+          2
+        ],
+        "negative_library": null,
+        "obligations": 1064,
+        "packet_replay_ticks": 256,
+        "policy": "wrr",
+        "producer_states": 8,
+        "producer_transitions": 12,
+        "required": [],
+        "service_words": 16,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 24,
+        "candidate_comparisons": 16,
+        "candidate_count": 4,
+        "case": "audit28",
+        "checker_states": 4,
+        "checker_transitions": 3,
+        "colorings": 4,
+        "concrete_traces": 4,
+        "disciplines": [
+          "fifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 4,
+          "checker_transitions": 3,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 4,
+          "producer_transitions": 3,
+          "status": "insufficient_library"
+        },
+        "obligations": 92,
+        "packet_replay_ticks": 12,
+        "policy": "priority",
+        "producer_states": 4,
+        "producer_transitions": 3,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 1,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 192,
+        "candidate_comparisons": 192,
+        "candidate_count": 4,
+        "case": "audit29",
+        "checker_states": 6,
+        "checker_transitions": 5,
+        "colorings": 16,
+        "concrete_traces": 48,
+        "disciplines": [
+          "lifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 0,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 2,
+        "lengths": [
+          3,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 6,
+          "checker_transitions": 5,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            2
+          ],
+          "producer_states": 6,
+          "producer_transitions": 5,
+          "status": "insufficient_library"
+        },
+        "obligations": 536,
+        "packet_replay_ticks": 96,
+        "policy": "rr",
+        "producer_states": 6,
+        "producer_transitions": 5,
+        "required": [
+          [
+            0,
+            2
+          ]
+        ],
+        "service_words": 3,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 1152,
+        "candidate_comparisons": 768,
+        "candidate_count": 4,
+        "case": "audit30",
+        "checker_states": 13,
+        "checker_transitions": 28,
+        "colorings": 3,
+        "concrete_traces": 192,
+        "disciplines": [
+          "lifo",
+          "lifo"
+        ],
+        "environment": {
+          "kind": "free"
+        },
+        "horizon": 3,
+        "lengths": [
+          1,
+          3
+        ],
+        "negative_library": {
+          "checker_states": 13,
+          "checker_transitions": 28,
+          "direct_earliest_failure": 3,
+          "earliest_failure": 3,
+          "omitted_cut": [
+            1,
+            2
+          ],
+          "producer_states": 13,
+          "producer_transitions": 28,
+          "status": "insufficient_library"
+        },
+        "obligations": 2680,
+        "packet_replay_ticks": 576,
+        "policy": "wrr",
+        "producer_states": 13,
+        "producer_transitions": 28,
+        "required": [
+          [
+            1,
+            2
+          ]
+        ],
+        "service_words": 64,
+        "workload": "hist"
+      },
+      {
+        "abstract_query_evaluations": 192,
+        "candidate_comparisons": 64,
+        "candidate_count": 2,
+        "case": "audit31",
+        "checker_states": 9,
+        "checker_transitions": 9,
+        "colorings": 8,
+        "concrete_traces": 32,
+        "disciplines": [
+          "fifo",
+          "fifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 0
+        },
+        "horizon": 3,
+        "lengths": [
+          2,
+          1
+        ],
+        "negative_library": {
+          "checker_states": 9,
+          "checker_transitions": 9,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 9,
+          "producer_transitions": 9,
+          "status": "insufficient_library"
+        },
+        "obligations": 436,
+        "packet_replay_ticks": 96,
+        "policy": "wrr",
+        "producer_states": 9,
+        "producer_transitions": 9,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 4,
+        "workload": "full"
+      },
+      {
+        "abstract_query_evaluations": 144,
+        "candidate_comparisons": 144,
+        "candidate_count": 4,
+        "case": "audit32",
+        "checker_states": 12,
+        "checker_transitions": 13,
+        "colorings": 4,
+        "concrete_traces": 36,
+        "disciplines": [
+          "lifo",
+          "lifo"
+        ],
+        "environment": {
+          "down_stalls": 1,
+          "kind": "budget",
+          "up_stalls": 1
+        },
+        "horizon": 2,
+        "lengths": [
+          2,
+          2
+        ],
+        "negative_library": {
+          "checker_states": 12,
+          "checker_transitions": 13,
+          "direct_earliest_failure": 2,
+          "earliest_failure": 2,
+          "omitted_cut": [
+            0,
+            1
+          ],
+          "producer_states": 12,
+          "producer_transitions": 13,
+          "status": "insufficient_library"
+        },
+        "obligations": 472,
+        "packet_replay_ticks": 72,
+        "policy": "priority",
+        "producer_states": 12,
+        "producer_transitions": 13,
+        "required": [
+          [
+            0,
+            1
+          ]
+        ],
+        "service_words": 9,
+        "workload": "hist"
+      }
+    ],
+    "concrete_traces": 3250,
+    "model_count": 32,
+    "models_with_missing_cut_negative": 29,
+    "obligations": 43007,
+    "oracle_disagreements": 0,
+    "packet_replay_ticks": 8729,
+    "scope": "exhaustive colors, valid service words, and ambient cut subsets within each retained small model",
+    "status": "all_exhaustive_micro_audits_passed"
+  },
+  "fixed_interpreter_audit": {
+    "checker_event_records": 35216,
+    "coefficient_cells": 107400,
+    "comparison": "Complete event multisets plus independently constructed query-coefficient matrices",
+    "fixed_cases": 51,
+    "producer_event_records": 35216,
+    "scope": "Retained fixed-schedule cases; finite cross-implementation audit, not a general proof",
+    "status": "all_fixed_interpreter_audits_passed"
+  },
+  "interpretation": [
+    "An insufficient_library decision is a completed negative scientific result. Transition-limit exhaustion is recorded as incomplete and carries no adequacy conclusion.",
+    "The exhaustive audit independently simulates packets and constructs abstraction keys before comparing producer, standalone checker, and numeric evaluator on every admitted coloring, valid service word, and ambient cut subset of each retained micro-model.",
+    "The three full reproductions compare decisions, cuts, witnesses, certificates, oracle results, audit results, and tables while excluding only run-dependent timing, memory, resume, and per-invocation counters.",
+    "The final clean runs use no paper files for science, network access, package installation, solver, GPU, model API, private cache, or external input.",
+    "The paper build validates bibliographic metadata against the retained audit and checks compilation, page count, letter size, encryption, references, overfull boxes, and font embedding. External publisher metadata remains subject to human author review before submission.",
+    "The paper build fixes SOURCE_DATE_EPOCH to the research-freeze date; the packaged main and supplement PDFs matched both consecutive clean builds byte for byte.",
+    "The reference preflight locks all four first-party USENIX URLs exactly; a deliberate wrong-path mutation for FPerf is rejected before TeX compilation.",
+    "The retained fixed-schedule cross-interpreter audit compares all 51 cases and requires equality of 35,216 producer/checker event records as multisets and 107,400 independently built query-coefficient cells.",
+    "The closest-source calibration record was completed after re-opening all 19 PDF pages of Count-Buffy: its bibliography ends at reference [30], and the manuscript still uses its own relevance-first 30-entry cited bibliography rather than padding to imitate that count."
+  ],
+  "main_campaign": {
+    "aggregate_obligations": 99212,
+    "case_counts": {
+      "fixed": 51,
+      "frontier": 8,
+      "restricted": 19
+    },
+    "control_count": 25,
+    "executed_obligations_this_invocation": 99212,
+    "exhaustive_micro_audit_abstract_query_evaluations": 17458,
+    "exhaustive_micro_audit_candidate_comparisons": 13644,
+    "exhaustive_micro_audit_models": 32,
+    "exhaustive_micro_audit_traces": 3250,
+    "finite_adequacy_counts": {
+      "fixed": {
+        "adequate": 25,
+        "insufficient_library": 26
+      },
+      "frontier": {
+        "adequate": 7,
+        "insufficient_library": 1
+      },
+      "restricted": {
+        "adequate": 19,
+        "insufficient_library": 0
+      }
+    },
+    "fixed_word_candidate_obligations": 6000,
+    "frontier_packet_replay_ticks": 4224,
+    "frontier_word_candidate_obligations": 7168,
+    "incomplete_resource_controls": 2,
+    "oracle_disagreements": 0,
+    "peak_rss_kib": 97456,
+    "rejected_certificate_or_schema_mutations": 23,
+    "resumed": false,
+    "scope": "generated bounded models; handwritten general proofs are not mechanized",
+    "status": "all_finite_checks_passed",
+    "timed_cpu_seconds": 0.49698825699999993,
+    "wall_seconds": 0.4987346679999973,
+    "whole_process_cpu_seconds": 1.362566792,
+    "workers": 1
+  },
+  "main_campaign_obligation_breakdown": {
+    "campaign_coverage_and_controls": 56205,
+    "independent_exhaustive_micro_audit": 43007,
+    "total": 99212
+  },
+  "paper_build": {
+    "all_entries_cited_and_emitted": true,
+    "appendix_pages": 3,
+    "bibliography_entries": 30,
+    "build_stderr_bytes_first": 0,
+    "build_stderr_bytes_second": 0,
+    "doi_records": 26,
+    "encrypted": false,
+    "first_and_second_clean_build_bytes_equal": true,
+    "first_party_record_urls_exactly_locked": true,
+    "first_party_venue_records": 4,
+    "fonts_embedded": true,
+    "main_pages": 12,
+    "overfull_boxes": 0,
+    "packaged_pdf_bytes_equal_first_clean_build": true,
+    "page_size": "US letter",
+    "resource_measurement": {
+      "exit_status": 0,
+      "max_rss_kib": 106408,
+      "system_seconds": 0.43,
+      "user_seconds": 5.03,
+      "wall_clock": "0:04.82"
+    },
+    "source_date_epoch": 1789516800,
+    "source_date_utc": "2026-09-16T00:00:00Z",
+    "status": "passed",
+    "supplied_ieeetran_bst_byte_identical": true,
+    "supplied_ieeetran_class_byte_identical": true,
+    "undefined_citations_or_references": 0,
+    "wrong_first_party_record_mutation_exit_status": 1,
+    "wrong_first_party_record_mutation_rejected": true
+  },
+  "retained_pilots": {
+    "algebraic": {
+      "cpu_seconds": 0.01005776199999997,
+      "hypergraph_pair_candidate_obligations": 240,
+      "negative_controls": {
+        "uncentered_signature_overprecision": "detected",
+        "universal_least_element_assumption": "refuted",
+        "width_chain_assumption": "refuted"
+      },
+      "oracle_word_candidate_obligations": 8576,
+      "peak_rss_kib": 92720,
+      "profile_cases": {
+        "class_independent_offsets": {
+          "candidates": 32,
+          "colorings": 64,
+          "required_cuts": []
+        },
+        "fifo_prefix4": {
+          "candidates": 32,
+          "colorings": 64,
+          "required_cuts": [
+            4
+          ]
+        },
+        "lifo_last2": {
+          "candidates": 32,
+          "colorings": 64,
+          "required_cuts": [
+            4
+          ]
+        },
+        "signed_fairness": {
+          "candidates": 32,
+          "colorings": 64,
+          "required_cuts": [
+            3
+          ]
+        }
+      },
+      "restricted_minimal_sets": [
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "scope": "finite checks, not a machine-checked general proof",
+      "status": "passed_bounded_pilot",
+      "uniform_width_adequacy": {
+        "1": true,
+        "2": true,
+        "3": false,
+        "4": true,
+        "5": false,
+        "6": false
+      },
+      "wall_seconds": 0.011536267999986194,
+      "workers": 1
+    },
+    "end_to_end": {
+      "cases": [
+        {
+          "candidates": 4,
+          "certificate": "adequate",
+          "colorings": 16,
+          "id": "tiny-01",
+          "obligations": 90,
+          "required": [
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "candidates": 4,
+          "certificate": "adequate",
+          "colorings": 16,
+          "id": "tiny-07",
+          "obligations": 91,
+          "required": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "candidates": 4,
+          "certificate": "adequate",
+          "colorings": 16,
+          "id": "tiny-11",
+          "obligations": 91,
+          "required": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "coefficient_mutation_rejected": true,
+      "cpu_seconds": 0.031244315000000022,
+      "hardest_dimensions": {
+        "classes": 4,
+        "horizon": 48,
+        "library_elements": 64,
+        "queries": 32,
+        "status": "insufficient_library",
+        "tokens": 96
+      },
+      "obligations": 374,
+      "peak_rss_kib": 92972,
+      "scope": "finite independent-implementation cross-check, not mechanized general proof",
+      "status": "passed_end_to_end_finite_pilot",
+      "wall_seconds": 0.03198631500004012,
+      "workers": 1
+    },
+    "frontier": {
+      "cpu_seconds": 0.005868943000000071,
+      "obligations": 6525,
+      "peak_rss_kib": 92596,
+      "rows": [
+        {
+          "case": "frontier01",
+          "checker": {
+            "earlier_query_checks": 4,
+            "states": 13,
+            "transitions": 28,
+            "witness_replay_ticks": 12
+          },
+          "explicit_service_paths": 64,
+          "omitted_reachable_state_rejected": true,
+          "producer": {
+            "max_layer_states": 6,
+            "output_frontiers": {
+              "1": [
+                0
+              ],
+              "3": [
+                0,
+                1,
+                2
+              ]
+            },
+            "states": 13,
+            "transitions": 28
+          },
+          "required": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "status": "adequate"
+        },
+        {
+          "case": "frontier03",
+          "checker": {
+            "earlier_query_checks": 0,
+            "states": 72,
+            "transitions": 93,
+            "witness_replay_ticks": 144
+          },
+          "omitted_reachable_state_rejected": true,
+          "producer": {
+            "max_layer_states": 3,
+            "output_frontiers": {
+              "24": [
+                22,
+                23
+              ]
+            },
+            "states": 72,
+            "transitions": 93
+          },
+          "required": [
+            [
+              0,
+              11
+            ],
+            [
+              0,
+              12
+            ],
+            [
+              1,
+              11
+            ]
+          ],
+          "status": "adequate"
+        },
+        {
+          "case": "frontier_pilot_free",
+          "checker": {
+            "earlier_query_checks": 0,
+            "states": 393,
+            "transitions": 1384,
+            "witness_replay_ticks": 32
+          },
+          "omitted_reachable_state_rejected": true,
+          "producer": {
+            "max_layer_states": 47,
+            "output_frontiers": {
+              "16": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            },
+            "states": 393,
+            "transitions": 1384
+          },
+          "required": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              8
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              7
+            ]
+          ],
+          "status": "insufficient_library"
+        }
+      ],
+      "status": "passed_frontier_finite_pilot",
+      "wall_seconds": 0.006965582000020731,
+      "workers": 1
+    }
+  },
+  "scope": "Finite deterministic reproduction, certificate checking, exhaustive retained micro-model audit, bibliography/build preflight, and archive-structure validation. Handwritten general proofs are not mechanized; this is not independent human or blind review.",
+  "standalone_cli_check": {
+    "case": "frontier03",
+    "checker": {
+      "earlier_query_checks": 0,
+      "states": 72,
+      "transitions": 93,
+      "witness_replay_ticks": 144
+    },
+    "checker_status": "accepted",
+    "decision": "adequate",
+    "synthesis_exit": 0
+  },
+  "standalone_verifier": {
+    "captured_stderr_bytes": 0,
+    "command_count": 16,
+    "commands": [
+      {
+        "command": "python -m compileall -q .",
+        "environment_overrides": {},
+        "expected_marker": null,
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python reproduce.py --output results/reproduced",
+        "environment_overrides": {},
+        "expected_marker": "all_finite_checks_passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python compare_results.py results/observed results/reproduced",
+        "environment_overrides": {},
+        "expected_marker": "scientific_results_equal",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python -O reproduce.py --output results/reproduced-optimized",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "17"
+        },
+        "expected_marker": "all_finite_checks_passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python compare_results.py results/observed results/reproduced-optimized",
+        "environment_overrides": {},
+        "expected_marker": "scientific_results_equal",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python reproduce.py --output results/reproduced-hash-seed",
+        "environment_overrides": {
+          "PYTHONHASHSEED": "991"
+        },
+        "expected_marker": "all_finite_checks_passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python compare_results.py results/observed results/reproduced-hash-seed",
+        "environment_overrides": {},
+        "expected_marker": "scientific_results_equal",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python -m countcuts synthesize --family frontier --case frontier03 --output results/example-certificate.json",
+        "environment_overrides": {},
+        "expected_marker": null,
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python -m countcuts check --family frontier --case frontier03 --certificate results/example-certificate.json",
+        "environment_overrides": {},
+        "expected_marker": "accepted",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/algebraic_pilot.py",
+        "environment_overrides": {},
+        "expected_marker": "passed_bounded_pilot",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/end_to_end_pilot.py",
+        "environment_overrides": {},
+        "expected_marker": "passed_end_to_end_finite_pilot",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/frontier_pilot.py",
+        "environment_overrides": {},
+        "expected_marker": "passed_frontier_finite_pilot",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/exhaustive_frontier_audit.py",
+        "environment_overrides": {},
+        "expected_marker": "all_exhaustive_micro_audits_passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/restricted_negative.py",
+        "environment_overrides": {},
+        "expected_marker": "passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/fixed_interpreter_audit.py",
+        "environment_overrides": {},
+        "expected_marker": "all_fixed_interpreter_audits_passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      },
+      {
+        "command": "python tests/frontier_integer_contract.py",
+        "environment_overrides": {},
+        "expected_marker": "strict_frontier_integer_contract_passed",
+        "returncode": 0,
+        "stderr_bytes": 0
+      }
+    ],
+    "isolation": "temporary repository copy",
+    "production_assert_statements": 0,
+    "production_python_files_parsed": 18,
+    "resource_measurement": {
+      "exit_status": 0,
+      "max_rss_kib": 109356,
+      "system_seconds": 1.21,
+      "user_seconds": 16.45,
+      "wall_clock": "0:11.17"
+    },
+    "status": "all_documented_checks_passed",
+    "temporary_csv_files_parsed": 8,
+    "temporary_json_files_parsed": 336
+  },
+  "status": "clean_extraction_verified",
+  "structure_validation": {
+    "case_table_data_rows": 59,
+    "claim_ledger_data_rows": 22,
+    "external_resource_data_rows": 45,
+    "literature_data_rows": 38,
+    "nested_archives": 0,
+    "private_absolute_paths": 0,
+    "project_archive_single_root": "precision-minimal-count-abstractions-contention-point-verification",
+    "project_artifact_equals_standalone_repository": true,
+    "project_root_entries": [
+      "CURRENT-STATE.md",
+      "artifact",
+      "paper",
+      "research-plan.md"
+    ],
+    "python_caches": 0,
+    "reference_audit_data_rows": 30,
+    "retained_scientific_json_files": 82,
+    "standalone_archive_single_root": "precision-minimal-count-abstractions",
+    "tex_intermediate_files": 0
+  },
+  "verification_context": "The verifier and paper build were executed from an isolated working copy. After this report is installed, the final archives are recreated, re-extracted, and the documented checks are rerun without modifying retained scientific results.",
+  "verification_date": "2026-09-25"
+}

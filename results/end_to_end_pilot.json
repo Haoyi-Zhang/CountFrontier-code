@@ -1,0 +1,67 @@
+{
+  "status": "passed_end_to_end_finite_pilot",
+  "cases": [
+    {
+      "id": "tiny-01",
+      "certificate": "adequate",
+      "required": [
+        [
+          1,
+          1
+        ]
+      ],
+      "colorings": 16,
+      "candidates": 4,
+      "obligations": 90
+    },
+    {
+      "id": "tiny-07",
+      "certificate": "adequate",
+      "required": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "colorings": 16,
+      "candidates": 4,
+      "obligations": 91
+    },
+    {
+      "id": "tiny-11",
+      "certificate": "adequate",
+      "required": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "colorings": 16,
+      "candidates": 4,
+      "obligations": 91
+    }
+  ],
+  "hardest_dimensions": {
+    "tokens": 96,
+    "classes": 4,
+    "horizon": 48,
+    "queries": 32,
+    "library_elements": 64,
+    "status": "insufficient_library"
+  },
+  "obligations": 374,
+  "coefficient_mutation_rejected": true,
+  "cpu_seconds": 0.031244315000000022,
+  "wall_seconds": 0.03198631500004012,
+  "peak_rss_kib": 92972,
+  "workers": 1,
+  "scope": "finite independent-implementation cross-check, not mechanized general proof"
+}

@@ -1,0 +1,351 @@
+{
+  "baselines": {
+    "common_uniform_blocks": 4,
+    "common_width": 1,
+    "count_only_adequate": false,
+    "least_blocks": 4,
+    "library_top_adequate": true,
+    "ordered_positions": 4,
+    "source_uniform_blocks": 4,
+    "source_widths": [
+      1,
+      1
+    ]
+  },
+  "case": {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "frontier02",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  "certificate": {
+    "case": "frontier02",
+    "cuts": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "layers": [
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          2,
+          0,
+          0
+        ]
+      ]
+    ],
+    "merge_word": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "required": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "status": "adequate",
+    "witnesses": [
+      {
+        "actions": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "cut": [
+          0,
+          1
+        ],
+        "left": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "query": 0,
+        "right": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "time": 2
+      },
+      {
+        "actions": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "cut": [
+          1,
+          1
+        ],
+        "left": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "query": 2,
+        "right": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "time": 3
+      }
+    ]
+  },
+  "certificate_bytes": 495,
+  "checker": {
+    "earlier_query_checks": 2,
+    "states": 13,
+    "transitions": 28,
+    "witness_replay_ticks": 10
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 7266,
+  "oracle": {
+    "abstract_query_evaluations": 4096,
+    "candidate_count": 4,
+    "candidates": [
+      {
+        "adequate": false,
+        "cuts": []
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ],
+    "colorings": 16,
+    "packet_replay_ticks": 3072,
+    "service_paths": 64,
+    "word_candidate_obligations": 4096
+  },
+  "producer": {
+    "max_layer_states": 6,
+    "output_frontiers": {
+      "2": [
+        0,
+        1
+      ],
+      "3": [
+        0,
+        1,
+        2
+      ]
+    },
+    "states": 13,
+    "transitions": 28
+  },
+  "producer_cpu_ns": 0
+}

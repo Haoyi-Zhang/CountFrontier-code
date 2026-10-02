@@ -1,0 +1,969 @@
+{
+  "baselines": {
+    "common_uniform_blocks": 3,
+    "common_width": 2,
+    "count_only_adequate": false,
+    "least_blocks": 2,
+    "library_top_adequate": true,
+    "ordered_positions": 6,
+    "source_uniform_blocks": 3,
+    "source_widths": [
+      2
+    ]
+  },
+  "case": {
+    "active": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "arrivals": [],
+    "classes": 2,
+    "groups": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "horizon": 6,
+    "id": "ordered-lifo",
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "terms": [
+          {
+            "end": 4,
+            "event": "depart",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1
+            ]
+          }
+        ]
+      }
+    ],
+    "queues": [
+      {
+        "capacity": 6,
+        "discipline": "lifo",
+        "initial": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "sink": null,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  "certificate": {
+    "blocks": [
+      {
+        "group": 0,
+        "start": 0,
+        "stop": 2,
+        "weights": [
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "group": 0,
+        "start": 2,
+        "stop": 6,
+        "weights": [
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    ],
+    "case": "ordered-lifo",
+    "cuts": [
+      [
+        0,
+        2
+      ]
+    ],
+    "offset": [
+      0
+    ],
+    "required": [
+      [
+        0,
+        2
+      ]
+    ],
+    "status": "adequate",
+    "witnesses": [
+      {
+        "group": 0,
+        "left": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "query": 0,
+        "rank": 2,
+        "right": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "certificate_bytes": 287,
+  "checker": {
+    "coefficient_cells": 12,
+    "event_records": 21,
+    "simulation_ticks": 6,
+    "witness_pairs": 1
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 2088,
+  "oracle": {
+    "candidates": [
+      {
+        "adequate": false,
+        "cuts": [],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            3
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "witness": null
+      }
+    ],
+    "colorings": 64,
+    "simulation_ticks": 6,
+    "word_candidate_obligations": 2048
+  },
+  "producer": {
+    "coefficient_cells": 12,
+    "event_records": 21,
+    "simulation_ticks": 6
+  },
+  "producer_cpu_ns": 0
+}

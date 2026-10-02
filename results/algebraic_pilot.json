@@ -1,0 +1,60 @@
+{
+  "status": "passed_bounded_pilot",
+  "workers": 1,
+  "profile_cases": {
+    "fifo_prefix4": {
+      "required_cuts": [
+        4
+      ],
+      "candidates": 32,
+      "colorings": 64
+    },
+    "lifo_last2": {
+      "required_cuts": [
+        4
+      ],
+      "candidates": 32,
+      "colorings": 64
+    },
+    "signed_fairness": {
+      "required_cuts": [
+        3
+      ],
+      "candidates": 32,
+      "colorings": 64
+    },
+    "class_independent_offsets": {
+      "required_cuts": [],
+      "candidates": 32,
+      "colorings": 64
+    }
+  },
+  "oracle_word_candidate_obligations": 8576,
+  "hypergraph_pair_candidate_obligations": 240,
+  "uniform_width_adequacy": {
+    "1": true,
+    "2": true,
+    "3": false,
+    "4": true,
+    "5": false,
+    "6": false
+  },
+  "restricted_minimal_sets": [
+    [
+      1,
+      2
+    ],
+    [
+      3
+    ]
+  ],
+  "cpu_seconds": 0.01005776199999997,
+  "wall_seconds": 0.011536267999986194,
+  "peak_rss_kib": 92720,
+  "negative_controls": {
+    "width_chain_assumption": "refuted",
+    "uncentered_signature_overprecision": "detected",
+    "universal_least_element_assumption": "refuted"
+  },
+  "scope": "finite checks, not a machine-checked general proof"
+}

@@ -1,0 +1,113 @@
+{
+  "case": {
+    "capacity": 4,
+    "classes": 2,
+    "horizon": 3,
+    "id": "support-00",
+    "library": [
+      1,
+      2,
+      3
+    ],
+    "modes": [
+      {
+        "context": 0,
+        "service": [
+          false,
+          false,
+          false
+        ],
+        "words": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "certificate": {
+    "case": "support-00",
+    "cuts": [],
+    "private_pairs": [],
+    "status": "adequate"
+  },
+  "certificate_bytes": 70,
+  "checker": {
+    "replay_ticks": 3,
+    "word_checks": 1
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 15,
+  "oracle": {
+    "candidates": [
+      {
+        "adequate": true,
+        "cuts": []
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          3
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          2
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          2,
+          3
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1,
+          3
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1,
+          2
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "minima": [
+      []
+    ],
+    "replay_ticks": 3,
+    "word_candidate_obligations": 8
+  },
+  "producer": {
+    "candidate_count": 8,
+    "minima": [
+      []
+    ],
+    "pair_candidate_obligations": 0,
+    "separators": []
+  },
+  "producer_cpu_ns": 0
+}

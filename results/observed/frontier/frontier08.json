@@ -1,0 +1,235 @@
+{
+  "baselines": {
+    "common_uniform_blocks": 2,
+    "common_width": 4,
+    "count_only_adequate": false,
+    "least_blocks": 2,
+    "library_top_adequate": true,
+    "ordered_positions": 6,
+    "source_uniform_blocks": 2,
+    "source_widths": [
+      4
+    ]
+  },
+  "case": {
+    "classes": 2,
+    "disciplines": [
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 5,
+    "id": "frontier08",
+    "lengths": [
+      6
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 5
+      },
+      {
+        "class": 1,
+        "time": 5
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  "certificate": {
+    "case": "frontier08",
+    "cuts": [
+      [
+        0,
+        4
+      ]
+    ],
+    "layers": [
+      [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          2,
+          1,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          3,
+          2,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          4,
+          3,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          5,
+          4,
+          0,
+          0
+        ]
+      ]
+    ],
+    "merge_word": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ]
+    ],
+    "required": [
+      [
+        0,
+        4
+      ]
+    ],
+    "status": "adequate",
+    "witnesses": [
+      {
+        "actions": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "cut": [
+          0,
+          4
+        ],
+        "left": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        ],
+        "query": 0,
+        "right": [
+          [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        ],
+        "time": 5
+      }
+    ]
+  },
+  "certificate_bytes": 345,
+  "checker": {
+    "earlier_query_checks": 0,
+    "states": 6,
+    "transitions": 5,
+    "witness_replay_ticks": 10
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 42,
+  "oracle": null,
+  "producer": {
+    "max_layer_states": 1,
+    "output_frontiers": {
+      "5": [
+        4
+      ]
+    },
+    "states": 6,
+    "transitions": 5
+  },
+  "producer_cpu_ns": 0
+}

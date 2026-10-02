@@ -1,0 +1,42 @@
+{
+  "aggregate_obligations": 99212,
+  "case_counts": {
+    "fixed": 51,
+    "frontier": 8,
+    "restricted": 19
+  },
+  "control_count": 25,
+  "executed_obligations_this_invocation": 99212,
+  "exhaustive_micro_audit_abstract_query_evaluations": 17458,
+  "exhaustive_micro_audit_candidate_comparisons": 13644,
+  "exhaustive_micro_audit_models": 32,
+  "exhaustive_micro_audit_traces": 3250,
+  "finite_adequacy_counts": {
+    "fixed": {
+      "adequate": 25,
+      "insufficient_library": 26
+    },
+    "frontier": {
+      "adequate": 7,
+      "insufficient_library": 1
+    },
+    "restricted": {
+      "adequate": 19,
+      "insufficient_library": 0
+    }
+  },
+  "fixed_word_candidate_obligations": 6000,
+  "frontier_packet_replay_ticks": 4224,
+  "frontier_word_candidate_obligations": 7168,
+  "incomplete_resource_controls": 2,
+  "oracle_disagreements": 0,
+  "peak_rss_kib": 97456,
+  "rejected_certificate_or_schema_mutations": 23,
+  "resumed": false,
+  "scope": "generated bounded models; handwritten general proofs are not mechanized",
+  "status": "all_finite_checks_passed",
+  "timed_cpu_seconds": 0.49698825699999993,
+  "wall_seconds": 0.4987346679999973,
+  "whole_process_cpu_seconds": 1.362566792,
+  "workers": 1
+}

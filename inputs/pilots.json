@@ -1,0 +1,190 @@
+{
+  "frontier": [
+    {
+      "id": "frontier01",
+      "classes": 2,
+      "horizon": 3,
+      "lengths": [
+        4
+      ],
+      "disciplines": [
+        "fifo"
+      ],
+      "policy": "rr",
+      "weights": [
+        1
+      ],
+      "sink_capacity": 1,
+      "environment": {
+        "kind": "free"
+      },
+      "queries": [
+        {
+          "time": 1,
+          "class": 0
+        },
+        {
+          "time": 1,
+          "class": 1
+        },
+        {
+          "time": 3,
+          "class": 0
+        },
+        {
+          "time": 3,
+          "class": 1
+        }
+      ],
+      "library": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "workload": {
+        "kind": "full"
+      }
+    },
+    {
+      "id": "frontier03",
+      "classes": 4,
+      "horizon": 24,
+      "lengths": [
+        24,
+        24
+      ],
+      "disciplines": [
+        "fifo",
+        "fifo"
+      ],
+      "policy": "rr",
+      "weights": [
+        1,
+        1
+      ],
+      "sink_capacity": 2,
+      "environment": {
+        "kind": "budget",
+        "up_stalls": 0,
+        "down_stalls": 1
+      },
+      "queries": [
+        {
+          "time": 24,
+          "class": 0
+        },
+        {
+          "time": 24,
+          "class": 1
+        },
+        {
+          "time": 24,
+          "class": 2
+        },
+        {
+          "time": 24,
+          "class": 3
+        }
+      ],
+      "library": [
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          1,
+          12
+        ]
+      ],
+      "workload": {
+        "kind": "full"
+      }
+    },
+    {
+      "id": "frontier_pilot_free",
+      "classes": 4,
+      "horizon": 16,
+      "lengths": [
+        12,
+        12
+      ],
+      "disciplines": [
+        "fifo",
+        "fifo"
+      ],
+      "policy": "rr",
+      "weights": [
+        1,
+        1
+      ],
+      "sink_capacity": 2,
+      "environment": {
+        "kind": "free"
+      },
+      "queries": [
+        {
+          "time": 16,
+          "class": 0
+        },
+        {
+          "time": 16,
+          "class": 1
+        },
+        {
+          "time": 16,
+          "class": 2
+        },
+        {
+          "time": 16,
+          "class": 3
+        }
+      ],
+      "library": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          8
+        ]
+      ],
+      "workload": {
+        "kind": "full"
+      }
+    }
+  ]
+}

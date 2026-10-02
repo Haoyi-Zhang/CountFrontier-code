@@ -1,0 +1,1964 @@
+[
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 2,
+    "id": "audit01",
+    "lengths": [
+      3
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit02",
+    "lengths": [
+      3
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 3,
+    "id": "audit03",
+    "lengths": [
+      4
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      2
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "audit04",
+    "lengths": [
+      4
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 2,
+    "id": "audit05",
+    "lengths": [
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 2,
+    "id": "audit06",
+    "lengths": [
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      3
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 3,
+    "id": "audit07",
+    "lengths": [
+      3
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          2,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit08",
+    "lengths": [
+      4
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "fifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 2,
+    "id": "audit09",
+    "lengths": [
+      2,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit10",
+    "lengths": [
+      1,
+      2
+    ],
+    "library": [
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 2,
+    "id": "audit11",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "audit12",
+    "lengths": [
+      3,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      2,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit13",
+    "lengths": [
+      1,
+      3
+    ],
+    "library": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 2,
+    "id": "audit14",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "fifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "audit15",
+    "lengths": [
+      2,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 2,
+    "id": "audit16",
+    "lengths": [
+      1,
+      2
+    ],
+    "library": [
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 3,
+    "id": "audit17",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      2,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 2,
+    "id": "audit18",
+    "lengths": [
+      3,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit19",
+    "lengths": [
+      1,
+      3
+    ],
+    "library": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 2,
+    "id": "audit20",
+    "lengths": [
+      2,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "fifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 2,
+    "id": "audit21",
+    "lengths": [
+      1,
+      2
+    ],
+    "library": [
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      2,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit22",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 2,
+    "id": "audit23",
+    "lengths": [
+      3,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "audit24",
+    "lengths": [
+      1,
+      3
+    ],
+    "library": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 2,
+    "id": "audit25",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      2,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 3,
+    "id": "audit26",
+    "lengths": [
+      2,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "fifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 2,
+    "id": "audit27",
+    "lengths": [
+      1,
+      2
+    ],
+    "library": [
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit28",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 0,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 2,
+    "id": "audit29",
+    "lengths": [
+      3,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "lifo"
+    ],
+    "environment": {
+      "kind": "free"
+    },
+    "horizon": 3,
+    "id": "audit30",
+    "lengths": [
+      1,
+      3
+    ],
+    "library": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      2,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "fifo",
+      "fifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 0
+    },
+    "horizon": 3,
+    "id": "audit31",
+    "lengths": [
+      2,
+      1
+    ],
+    "library": [
+      [
+        0,
+        1
+      ]
+    ],
+    "policy": "wrr",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      },
+      {
+        "class": 0,
+        "time": 3
+      },
+      {
+        "class": 1,
+        "time": 3
+      }
+    ],
+    "sink_capacity": 2,
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  {
+    "classes": 2,
+    "disciplines": [
+      "lifo",
+      "lifo"
+    ],
+    "environment": {
+      "down_stalls": 1,
+      "kind": "budget",
+      "up_stalls": 1
+    },
+    "horizon": 2,
+    "id": "audit32",
+    "lengths": [
+      2,
+      2
+    ],
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "priority",
+    "queries": [
+      {
+        "class": 0,
+        "time": 1
+      },
+      {
+        "class": 1,
+        "time": 1
+      },
+      {
+        "class": 0,
+        "time": 2
+      },
+      {
+        "class": 1,
+        "time": 2
+      }
+    ],
+    "sink_capacity": 1,
+    "weights": [
+      1,
+      1
+    ],
+    "workload": {
+      "kind": "hist",
+      "totals": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  }
+]

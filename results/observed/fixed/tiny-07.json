@@ -1,0 +1,474 @@
+{
+  "baselines": {
+    "common_uniform_blocks": 4,
+    "common_width": 1,
+    "count_only_adequate": false,
+    "least_blocks": 4,
+    "library_top_adequate": true,
+    "ordered_positions": 4,
+    "source_uniform_blocks": 4,
+    "source_widths": [
+      1,
+      1
+    ]
+  },
+  "case": {
+    "active": [
+      true,
+      false,
+      true,
+      true,
+      true
+    ],
+    "arrivals": [
+      {
+        "queue": 0,
+        "time": 1,
+        "token": 1
+      },
+      {
+        "queue": 1,
+        "time": 1,
+        "token": 3
+      }
+    ],
+    "classes": 2,
+    "groups": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "horizon": 5,
+    "id": "tiny-07",
+    "library": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "policy": "rr",
+    "queries": [
+      {
+        "terms": [
+          {
+            "end": 5,
+            "event": "depart",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 5,
+            "event": "occupancy",
+            "queue": -1,
+            "start": 5,
+            "weights": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 5,
+            "event": "drop",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 5,
+            "event": "transfer",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 2,
+            "event": "depart",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "terms": [
+          {
+            "end": 5,
+            "event": "depart",
+            "queue": -1,
+            "start": 1,
+            "weights": [
+              -1,
+              1
+            ]
+          }
+        ]
+      }
+    ],
+    "queues": [
+      {
+        "capacity": 2,
+        "discipline": "lifo",
+        "initial": [
+          0
+        ]
+      },
+      {
+        "capacity": 2,
+        "discipline": "lifo",
+        "initial": [
+          2
+        ]
+      }
+    ],
+    "sink": {
+      "active": [
+        true,
+        false,
+        true,
+        true,
+        false
+      ],
+      "capacity": 1,
+      "discipline": "fifo"
+    },
+    "weights": [
+      1,
+      2
+    ],
+    "workload": {
+      "kind": "full"
+    }
+  },
+  "certificate": {
+    "blocks": [
+      {
+        "group": 0,
+        "start": 0,
+        "stop": 1,
+        "weights": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "group": 0,
+        "start": 1,
+        "stop": 2,
+        "weights": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      },
+      {
+        "group": 1,
+        "start": 0,
+        "stop": 1,
+        "weights": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "group": 1,
+        "start": 1,
+        "stop": 2,
+        "weights": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ]
+        ]
+      }
+    ],
+    "case": "tiny-07",
+    "cuts": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "offset": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      -2
+    ],
+    "required": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "status": "adequate",
+    "witnesses": [
+      {
+        "group": 0,
+        "left": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "query": 0,
+        "rank": 1,
+        "right": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "left": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "query": 0,
+        "rank": 1,
+        "right": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  "certificate_bytes": 581,
+  "checker": {
+    "coefficient_cells": 48,
+    "event_records": 21,
+    "simulation_ticks": 5,
+    "witness_pairs": 2
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 103,
+  "oracle": {
+    "candidates": [
+      {
+        "adequate": false,
+        "cuts": [],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            0,
+            1
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          [
+            1,
+            1
+          ]
+        ],
+        "witness": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "witness": null
+      }
+    ],
+    "colorings": 16,
+    "simulation_ticks": 5,
+    "word_candidate_obligations": 64
+  },
+  "producer": {
+    "coefficient_cells": 48,
+    "event_records": 21,
+    "simulation_ticks": 5
+  },
+  "producer_cpu_ns": 0
+}

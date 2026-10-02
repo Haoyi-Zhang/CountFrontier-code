@@ -1,0 +1,188 @@
+{
+  "case": {
+    "capacity": 4,
+    "classes": 2,
+    "horizon": 3,
+    "id": "support-11",
+    "library": [
+      1,
+      2,
+      3
+    ],
+    "modes": [
+      {
+        "context": 0,
+        "service": [
+          true,
+          false,
+          false
+        ],
+        "words": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "context": 1,
+        "service": [
+          true,
+          false,
+          false
+        ],
+        "words": [
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ]
+      }
+    ]
+  },
+  "certificate": {
+    "case": "support-11",
+    "cuts": [
+      2,
+      3
+    ],
+    "private_pairs": [
+      {
+        "context": 0,
+        "cut": 2,
+        "left": 0,
+        "right": 1
+      },
+      {
+        "context": 1,
+        "cut": 3,
+        "left": 0,
+        "right": 1
+      }
+    ],
+    "status": "adequate"
+  },
+  "certificate_bytes": 154,
+  "checker": {
+    "replay_ticks": 24,
+    "word_checks": 4
+  },
+  "checker_cpu_ns": 0,
+  "obligations": 88,
+  "oracle": {
+    "candidates": [
+      {
+        "adequate": false,
+        "cuts": []
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          3
+        ]
+      },
+      {
+        "adequate": false,
+        "cuts": [
+          2
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          2,
+          3
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1,
+          3
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1,
+          2
+        ]
+      },
+      {
+        "adequate": true,
+        "cuts": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "minima": [
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "replay_ticks": 12,
+    "word_candidate_obligations": 32
+  },
+  "producer": {
+    "candidate_count": 8,
+    "minima": [
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "pair_candidate_obligations": 16,
+    "separators": [
+      {
+        "context": 0,
+        "cuts": [
+          1,
+          2
+        ],
+        "left": 0,
+        "right": 1
+      },
+      {
+        "context": 1,
+        "cuts": [
+          1,
+          3
+        ],
+        "left": 0,
+        "right": 1
+      }
+    ]
+  },
+  "producer_cpu_ns": 0
+}
