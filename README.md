@@ -153,9 +153,6 @@ the method and its boundaries; their count is not practical workload breadth.
 The accompanying manuscript is a separate deliverable, but this repository does
 not need its sources, figures, private paths, or caches to reproduce the science.
 
-All original implementation, input generation, proof exposition, and research
-execution were substantively AI-assisted with OpenAI GPT-5.6 Sol Pro. This
-disclosure is not a claim of independent review or a substitute for human authorship obligations
-before external publication. Original repository materials are offered under the
+Original repository materials are offered under the
 included MIT license. No upstream scientific code or copyrighted paper PDF is
 redistributed here; cited works retain their own rights.
