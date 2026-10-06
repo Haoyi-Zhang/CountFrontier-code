@@ -12,7 +12,7 @@ def need(test,reason):
 def wellformed(c):
     need(type(c) is dict and set(c)=={'id','capacity','horizon','classes','library','modes'},'model fields')
     need(type(c['id']) is str and 0<len(c['id'])<=80,'model id')
-    need(type(c['capacity']) is int and 1<=c['capacity']<=24 and type(c['horizon']) is int and 1<=c['horizon']<=48 and c['classes']==2,'FIFO dimensions')
+    need(type(c['capacity']) is int and 1<=c['capacity']<=24 and type(c['horizon']) is int and 1<=c['horizon']<=48 and type(c['classes']) is int and c['classes']==2,'FIFO dimensions')
     lib=c['library']
     need(type(lib) is list and len(lib)<=6 and all(type(r) is int and 1<=r<c['capacity'] for r in lib) and len(lib)==len(set(lib)),'eligible cuts')
     need(type(c['modes']) is list and 1<=len(c['modes'])<=64,'finite contexts')
@@ -66,6 +66,7 @@ def check(c,cert):
         need(set(cert)=={'case','status','pair'},'insufficiency certificate')
         p=cert['pair']
         need(type(p) is dict and set(p)=={'context','left','right','cuts'},'pair fields')
+        need(type(p['context']) is int,'retained context reference')
         modes=[m for m in c['modes'] if m['context']==p['context']]
         need(len(modes)==1,'unknown context');mode=modes[0]
         need(all(type(p[z]) is int and 0<=p[z]<len(mode['words']) for z in ('left','right')) and p['left']<p['right'],'word references')
@@ -78,7 +79,7 @@ def check(c,cert):
 
     need(set(cert)=={'case','status','cuts','private_pairs'},'adequacy certificate')
     cuts=cert['cuts']
-    need(type(cuts) is list and all(r in c['library'] for r in cuts) and len(cuts)==len(set(cuts)),'candidate cuts')
+    need(type(cuts) is list and all(type(r) is int and r in c['library'] for r in cuts) and len(cuts)==len(set(cuts)),'candidate cuts')
     table={};word_checks=0
     for mode in c['modes']:
         for row in mode['words']:
@@ -89,6 +90,7 @@ def check(c,cert):
     need(type(pairs) is list and len(pairs)==len(cuts) and [p.get('cut') for p in pairs if type(p) is dict]==cuts,'minimality pair coverage')
     for p in pairs:
         need(set(p)=={'cut','context','left','right'},'pair fields')
+        need(type(p['cut']) is int and p['cut'] in cuts and type(p['context']) is int,'integer private-pair references')
         modes=[m for m in c['modes'] if m['context']==p['context']]
         need(len(modes)==1,'unknown context');mode=modes[0]
         need(all(type(p[z]) is int and 0<=p[z]<len(mode['words']) for z in ('left','right')) and p['left']<p['right'],'word references')

@@ -19,6 +19,8 @@ import tempfile
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
+LOGS: Path | None = None
+COMMAND_NUMBER = 0
 
 
 def run(
@@ -27,16 +29,35 @@ def run(
     expected: str | None = None,
     env_overrides: dict[str, str] | None = None,
 ) -> dict[str, object]:
-    environment = {**os.environ, **(env_overrides or {}), "PYTHONPATH": str(work)}
-    completed = subprocess.run(
-        [sys.executable, *args],
-        cwd=work,
-        text=True,
-        capture_output=True,
-        timeout=120,
-        check=False,
-        env=environment,
-    )
+    global COMMAND_NUMBER
+    COMMAND_NUMBER += 1
+    environment = {**os.environ, **(env_overrides or {}), "PYTHONPATH": str(work),
+                   "PYTHONUTF8": "1", "PYTHONDONTWRITEBYTECODE": "1"}
+    try:
+        completed = subprocess.run(
+            [sys.executable, "-B", *args],
+            cwd=work,
+            text=True,
+            capture_output=True,
+            timeout=60,
+            check=False,
+            env=environment,
+        )
+    except subprocess.TimeoutExpired as error:
+        if LOGS is not None:
+            for stream in ("stdout", "stderr"):
+                value = getattr(error, stream) or b""
+                if isinstance(value, str):
+                    value = value.encode("utf-8")
+                (LOGS / f"{COMMAND_NUMBER:02d}.{stream}").write_bytes(value)
+        raise
+    if LOGS is not None:
+        (LOGS / f"{COMMAND_NUMBER:02d}.stdout").write_text(completed.stdout, encoding="utf-8")
+        (LOGS / f"{COMMAND_NUMBER:02d}.stderr").write_text(completed.stderr, encoding="utf-8")
+        (LOGS / f"{COMMAND_NUMBER:02d}.command.json").write_text(json.dumps({
+            "argv": [sys.executable, "-B", *args], "cwd": str(work),
+            "returncode": completed.returncode, "environment_overrides": env_overrides or {},
+        }, indent=2) + "\n", encoding="utf-8")
     if completed.returncode != 0:
         raise RuntimeError(
             f"command failed ({completed.returncode}): python {' '.join(args)}\n"
@@ -57,17 +78,17 @@ def run(
 
 def source_audit(work: Path) -> dict[str, int]:
     """Parse shipped Python and forbid optimization-sensitive production asserts."""
-    production_files = [
-        path for path in work.rglob("*.py")
-        if "tests" not in path.relative_to(work).parts
-    ]
+    all_files = list(work.rglob("*.py"))
+    production_files = [path for path in all_files if "tests" not in path.relative_to(work).parts]
     assert_nodes = 0
-    for path in production_files:
+    for path in all_files:
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
-        assert_nodes += sum(isinstance(node, ast.Assert) for node in ast.walk(tree))
+        if path in production_files:
+            assert_nodes += sum(isinstance(node, ast.Assert) for node in ast.walk(tree))
     if assert_nodes:
         raise RuntimeError(f"production source contains {assert_nodes} optimization-sensitive assert statements")
-    return {"production_python_files_parsed": len(production_files),
+    return {"all_python_files_parsed": len(all_files),
+            "production_python_files_parsed": len(production_files),
             "production_assert_statements": assert_nodes}
 
 
@@ -85,12 +106,18 @@ def parse_all(work: Path) -> dict[str, int]:
 
 
 def main() -> None:
+    global LOGS
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--keep", action="store_true", help="retain the temporary copy and print its path")
+    parser.add_argument("--work-dir", type=Path, help="new, absent isolation directory; always retained")
+    parser.add_argument("--logs", type=Path, help="new, absent directory for raw command outputs")
     args = parser.parse_args()
 
-    temporary = tempfile.mkdtemp(prefix="countcuts-verify-")
-    work = Path(temporary) / "precision-minimal-count-abstractions"
+    if args.logs:
+        LOGS = args.logs.resolve()
+        LOGS.mkdir(parents=True, exist_ok=False)
+    temporary = None if args.work_dir else tempfile.mkdtemp(prefix="countcuts-verify-")
+    work = args.work_dir.resolve() if args.work_dir else Path(temporary) / "precision-minimal-count-abstractions"
     try:
         shutil.copytree(
             BASE,
@@ -99,8 +126,8 @@ def main() -> None:
                 "__pycache__", "*.pyc", "reproduced*", "example-certificate.json"
             ),
         )
+        source = source_audit(work)
         commands = [
-            run(work, "-m", "compileall", "-q", "."),
             run(work, "reproduce.py", "--output", "results/reproduced", expected="all_finite_checks_passed"),
             run(
                 work,
@@ -172,8 +199,8 @@ def main() -> None:
             run(work, "tests/restricted_negative.py", expected="passed"),
             run(work, "tests/fixed_interpreter_audit.py", expected="all_fixed_interpreter_audits_passed"),
             run(work, "tests/frontier_integer_contract.py", expected="strict_frontier_integer_contract_passed"),
+            run(work, "tests/fixed_restricted_integer_contract.py", expected="fixed_restricted_integer_contract_passed"),
         ]
-        source = source_audit(work)
         parsed = parse_all(work)
         report = {
             "status": "all_documented_checks_passed",
@@ -183,9 +210,11 @@ def main() -> None:
             **parsed,
             "scope": "finite execution and deterministic comparison; handwritten general proofs are not mechanized",
         }
+        if LOGS is not None:
+            (LOGS / "verification.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         print(json.dumps(report, indent=2, sort_keys=True))
     finally:
-        if args.keep:
+        if args.keep or args.work_dir:
             print(f"temporary_copy={work}", file=sys.stderr)
         else:
             shutil.rmtree(temporary, ignore_errors=True)

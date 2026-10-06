@@ -18,6 +18,25 @@ def insist(test: bool, message: str) -> None:
         raise Rejected(message)
 
 
+def integer(value: Any, lo: int, hi: int) -> bool:
+    return type(value) is int and lo <= value <= hi
+
+
+def validate_cut(c: dict[str, Any], value: Any) -> None:
+    insist(type(value) is list and len(value) == 2, 'cut encoding')
+    g, r = value
+    insist(integer(g, 0, len(c['groups'])-1), 'cut source')
+    insist(integer(r, 1, len(c['groups'][g])-1), 'cut rank')
+
+
+def cut_list(c: dict[str, Any], value: Any) -> None:
+    insist(type(value) is list, 'cut list encoding')
+    for item in value:
+        validate_cut(c, item)
+    pairs = [tuple(item) for item in value]
+    insist(pairs == sorted(set(pairs)), 'canonical distinct cuts')
+
+
 def wellformed(c: dict[str, Any]) -> tuple[int, int, int]:
     insist(isinstance(c, dict) and set(c) == {'id', 'classes', 'horizon', 'queues', 'arrivals', 'active', 'policy', 'weights', 'sink', 'groups', 'library', 'workload', 'queries'}, 'case schema')
     k, h, m = c['classes'], c['horizon'], len(c['queues'])
@@ -176,6 +195,7 @@ def answers(c: dict[str, Any], word: list[int], trace: list[list[Any]]) -> tuple
 
 def check(c: dict[str, Any], cert: dict[str, Any]) -> dict[str, int]:
     trace, ticks = replay(c)
+    insist(type(cert) is dict, 'certificate object')
     a = matrix(c, trace)
     n, k = len(a), c['classes']
     qs = len(c['queries'])
@@ -187,27 +207,35 @@ def check(c: dict[str, Any], cert: dict[str, Any]) -> dict[str, int]:
             if any(a[l][q][c1]+a[u][q][c2] != a[l][q][c2]+a[u][q][c1]
                    for q in range(qs) for c1 in pal[g] for c2 in pal[g]):
                 needed.append([g, r])
+    cut_list(c, cert.get('required'))
     insist(cert.get('case') == c['id'] and cert.get('required') == needed, 'case or required-cut mismatch')
     library = c['library']
     missing = [cut for cut in needed if cut not in library]
     if missing:
         insist(set(cert) == {'case', 'required', 'status', 'missing', 'witness'} and cert['status'] == 'insufficient_library', 'inadequate-library certificate schema')
+        validate_cut(c, cert['missing'])
         insist(cert['missing'] == missing[0], 'first unavailable required cut')
         witness_list = [cert['witness']]
         witness_cuts = [missing[0]]
     else:
         insist(set(cert) == {'case', 'required', 'status', 'cuts', 'offset', 'blocks', 'witnesses'} and cert['status'] == 'adequate', 'adequate certificate schema')
+        cut_list(c, cert['cuts'])
+        insist(type(cert['witnesses']) is list, 'witness list encoding')
         insist(cert['cuts'] == needed and len(cert['witnesses']) == len(needed), 'minimality witness coverage')
         expected_offset = [sum(a[p][q][pal[g][0]] for g, group in enumerate(c['groups']) for p in group) for q in range(qs)]
+        insist(type(cert['offset']) is list and len(cert['offset']) == qs and all(type(v) is int for v in cert['offset']), 'integer offset vector')
         insist(cert['offset'] == expected_offset, 'constant contribution')
+        insist(type(cert['blocks']) is list, 'block list encoding')
         block_at = 0
         for g, group in enumerate(c['groups']):
             ends = [0] + [r for gi, r in needed if gi == g] + [len(group)]
             for start, stop in zip(ends, ends[1:]):
                 insist(block_at < len(cert['blocks']), 'missing block')
                 b = cert['blocks'][block_at]; block_at += 1
-                insist(set(b) == {'group', 'start', 'stop', 'weights'} and (b['group'], b['start'], b['stop']) == (g, start, stop), 'block partition')
-                insist(len(b['weights']) == qs and all(len(v) == k for v in b['weights']), 'formula dimensions')
+                insist(type(b) is dict and set(b) == {'group', 'start', 'stop', 'weights'}, 'block fields')
+                insist(integer(b['group'], 0, len(c['groups'])-1) and integer(b['start'], 0, len(group)-1) and integer(b['stop'], 1, len(group)), 'integer block indices')
+                insist((b['group'], b['start'], b['stop']) == (g, start, stop), 'block partition')
+                insist(type(b['weights']) is list and len(b['weights']) == qs and all(type(v) is list and len(v) == k and all(type(w) is int for w in v) for v in b['weights']), 'integer formula dimensions')
                 for p in group[start:stop]:
                     for q in range(qs):
                         expect = [a[p][q][col]-a[p][q][pal[g][0]] if col in pal[g] else 0 for col in range(k)]
@@ -215,7 +243,9 @@ def check(c: dict[str, Any], cert: dict[str, Any]) -> dict[str, int]:
         insist(block_at == len(cert['blocks']), 'extra block')
         witness_list, witness_cuts = cert['witnesses'], needed
     for w, cut in zip(witness_list, witness_cuts):
-        insist(set(w) == {'group', 'rank', 'query', 'left', 'right'}, 'witness schema')
+        insist(type(w) is dict and set(w) == {'group', 'rank', 'query', 'left', 'right'}, 'witness schema')
+        insist(integer(w['group'], 0, len(c['groups'])-1), 'witness source')
+        insist(integer(w['rank'], 1, len(c['groups'][w['group']])-1), 'witness rank')
         insist([w['group'], w['rank']] == cut and type(w['query']) is int and 0 <= w['query'] < qs, 'witness location')
         x, y = w['left'], w['right']
         insist(permitted(c, x) and permitted(c, y), 'witness outside workload')

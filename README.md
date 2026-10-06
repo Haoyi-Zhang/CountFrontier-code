@@ -24,7 +24,7 @@ python compare_results.py results/observed results/reproduced
 For a single isolated command that also runs the certificate CLI, all retained
 pilots, the exhaustive frontier audit, the restricted negative-certificate
 regression, the full fixed-interpreter cross-check, the strict frontier-certificate
-integer-contract regression, and JSON/CSV parsing, use:
+integer-contract regressions, and JSON/CSV parsing, use:
 
 ```sh
 python verify.py
@@ -46,6 +46,30 @@ witness cuts, witness query/time fields, and `earliest_failure` are rejected bef
 numeric decoding. These directed checks are additional regressions; they do not
 change the retained count of 23 campaign mutations or two incomplete controls.
 
+`tests/fixed_restricted_integer_contract.py` checks the corresponding fixed and
+restricted certificate fields. All 64 binary words in the six-position FIFO
+example decode from the certified block indices and coefficients exactly as
+direct colored execution does. Its 42 fixed-positive, four fixed-negative and
+15 restricted malformed-field variants must raise the checker's rejection
+exception, rather than accept numerically equal floats/booleans or fail later
+on a slice index. These are separate directed regressions, not additions to the
+retained campaign's 23 mutations.
+
+For raw outputs and a retained isolation directory, use new, absent paths:
+
+```sh
+python -B verify.py --work-dir /tmp/countcuts-check --logs /tmp/countcuts-output
+```
+
+The verifier parses every Python source without producing bytecode, sets UTF-8
+and bytecode-free execution for its subprocesses, and retains each command's raw
+stdout/stderr when `--logs` is supplied. It bounds each command to 60 seconds.
+The `.github/workflows/scientific-checks.yml` runs the whole verifier
+from this flat artifact-repository root on Ubuntu 24.04, with one CPU, a
+240-second whole-run timeout, a 2-GiB virtual-memory limit and a 110-second
+per-process CPU limit. Raw outputs are uploaded even when a check fails; failures
+remain failing gates.
+
 The output directory must be new. The expected result is
 `all_finite_checks_passed`: 51 fixed-schedule, eight symbolic-frontier and 19
 restricted-support main cases; 51 adequate and 27 insufficient eligible
@@ -55,9 +79,29 @@ color/service traces and all 13,644 trace-candidate comparisons across 118
 obligations in total; zero oracle/audit disagreements; 23 rejected
 certificate/schema mutations and two incomplete transition-limit controls. The
 comparison requires all deterministic scientific JSON and table content to match. It deliberately excludes timings and memory, not witnesses or decisions.
-A clean reproduction performed for this delivery is recorded in
+A historical clean reproduction is recorded in
 `results/clean_reproduction.json`. Generated model dictionaries must equal the
 retained `inputs/cases.json` before a run proceeds.
+
+The observations in `results/observed` and `results/clean_reproduction.json` are
+retained historical host executions. Their CPU/RSS values are not measurements
+of the current checker revision on every platform. Windows function-level
+replays can test the finite semantics but do not execute the POSIX resource
+guards in `reproduce.py`, the CLI or the three development-pilot entry points.
+
+The current Python 3.12 Linux run completed all 16 verifier commands, including
+the CLI and three development pilots. Normal execution, optimized execution with
+hash seed 17, and normal execution with hash seed 991 each matched 82 JSON records
+(81 non-summary records plus the summary) and all 59 rows of the single case-table
+CSV. The data-only correspondence check excluded only named root timing/RSS fields
+and CSV timing columns; operation counts, resume flags, per-invocation counts,
+witnesses and negative results also matched. The fixed/restricted regression
+checked 64 decoder words and rejected 61 malformed certificates, separately from
+the historical 23 campaign mutations. Per-reproduction whole-process CPU ranged
+from 0.472 to 0.581 seconds and peak RSS from 19,980 to 22,388 KiB; these are host
+observations, not comparative speed results. The [Linux measurement receipt](results/measurements/linux-37438859887.json)
+records the run identity, commands, exact measurements and regression outcomes.
+Historical tables, results and measurements are retained unchanged.
 
 ## Synthesize and check a certificate
 
@@ -141,6 +185,7 @@ the retained control and extendibility contract, not unbounded shortest traces.
 - `inputs/`: exact generated model dictionaries and retained pilot inputs.
 - `results/observed/`: original main-run certificates, controls, oracles, tables.
 - `results/clean_reproduction.json`: clean-extraction comparison and measurements.
+- `results/measurements/linux-37438859887.json`: current Linux execution and scientific-correspondence receipt; separate from historical measurements.
 - `claim_evidence_ledger.csv`: theorem/test/data support for material claims.
 - `reference_audit.csv`: publisher/first-party identifier and manuscript-role audit for every cited bibliography entry.
 - `external_resources.csv`, `literature.csv`: lawful provenance and reading scope.

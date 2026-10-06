@@ -1,0 +1,428 @@
+{
+  "CLI": {
+    "case": "frontier03",
+    "checker": {
+      "earlier_query_checks": 0,
+      "states": 72,
+      "transitions": 93,
+      "witness_replay_ticks": 144
+    },
+    "decision": "adequate",
+    "status": "accepted"
+  },
+  "charge_accounting_limit": "Subtotal follows the existing obligation conventions; CLI and other regressions are separate and not assigned invented obligation charges.",
+  "command_count": 16,
+  "commands": [
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "reproduce.py",
+        "--output",
+        "results/reproduced"
+      ],
+      "environment_overrides": {},
+      "index": 1,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "compare_results.py",
+        "results/observed",
+        "results/reproduced"
+      ],
+      "environment_overrides": {},
+      "index": 2,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "-O",
+        "reproduce.py",
+        "--output",
+        "results/reproduced-optimized"
+      ],
+      "environment_overrides": {
+        "PYTHONHASHSEED": "17"
+      },
+      "index": 3,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "compare_results.py",
+        "results/observed",
+        "results/reproduced-optimized"
+      ],
+      "environment_overrides": {},
+      "index": 4,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "reproduce.py",
+        "--output",
+        "results/reproduced-hash-seed"
+      ],
+      "environment_overrides": {
+        "PYTHONHASHSEED": "991"
+      },
+      "index": 5,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "compare_results.py",
+        "results/observed",
+        "results/reproduced-hash-seed"
+      ],
+      "environment_overrides": {},
+      "index": 6,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "-m",
+        "countcuts",
+        "synthesize",
+        "--family",
+        "frontier",
+        "--case",
+        "frontier03",
+        "--output",
+        "results/example-certificate.json"
+      ],
+      "environment_overrides": {},
+      "index": 7,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "-m",
+        "countcuts",
+        "check",
+        "--family",
+        "frontier",
+        "--case",
+        "frontier03",
+        "--certificate",
+        "results/example-certificate.json"
+      ],
+      "environment_overrides": {},
+      "index": 8,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/algebraic_pilot.py"
+      ],
+      "environment_overrides": {},
+      "index": 9,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/end_to_end_pilot.py"
+      ],
+      "environment_overrides": {},
+      "index": 10,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/frontier_pilot.py"
+      ],
+      "environment_overrides": {},
+      "index": 11,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/exhaustive_frontier_audit.py"
+      ],
+      "environment_overrides": {},
+      "index": 12,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/restricted_negative.py"
+      ],
+      "environment_overrides": {},
+      "index": 13,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/fixed_interpreter_audit.py"
+      ],
+      "environment_overrides": {},
+      "index": 14,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/frontier_integer_contract.py"
+      ],
+      "environment_overrides": {},
+      "index": 15,
+      "returncode": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "argv": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-B",
+        "tests/fixed_restricted_integer_contract.py"
+      ],
+      "environment_overrides": {},
+      "index": 16,
+      "returncode": 0,
+      "stderr_bytes": 0
+    }
+  ],
+  "corpus": {
+    "CSV_files_per_comparison": 1,
+    "JSON_files_per_comparison": 82,
+    "case_table_rows": 59,
+    "non_summary_JSON_files": 81
+  },
+  "exclusions": {
+    "archive_copied_observed_reference_exclusions": [],
+    "case_JSON_root_only": [
+      "checker_cpu_ns",
+      "producer_cpu_ns"
+    ],
+    "case_table_CSV_columns_only": [
+      "checker_cpu_ns",
+      "producer_cpu_ns"
+    ],
+    "not_excluded": [
+      "resumed",
+      "executed_obligations_this_invocation",
+      "aggregate_obligations",
+      "all other operation counts, decisions, witnesses, negative endpoints, decoder and rejection results"
+    ],
+    "pilot_JSON_root_only": [
+      "cpu_seconds",
+      "peak_rss_kib",
+      "wall_seconds"
+    ],
+    "reason": "Measured process timing and host high-water RSS can change without changing bounded scientific outcomes.",
+    "summary_JSON_root_only": [
+      "peak_rss_kib",
+      "timed_cpu_seconds",
+      "wall_seconds",
+      "whole_process_cpu_seconds"
+    ]
+  },
+  "fixed_interpreter_audit": {
+    "checker_event_records": 35216,
+    "coefficient_cells": 107400,
+    "comparison": "event multisets plus independently constructed coefficient matrices",
+    "fixed_cases": 51,
+    "producer_event_records": 35216,
+    "scope": "retained fixed-schedule cases; finite cross-implementation audit, not a general proof",
+    "status": "all_fixed_interpreter_audits_passed"
+  },
+  "fixed_restricted_integer_contract": {
+    "fixed_decoder_words": 64,
+    "fixed_negative_rejections": 4,
+    "fixed_positive_rejections": 42,
+    "restricted_rejections": 15,
+    "status": "fixed_restricted_integer_contract_passed"
+  },
+  "frontier_integer_contract": {
+    "baseline_frontier03_decoded": 22,
+    "baseline_frontier03_states": 72,
+    "baseline_frontier07_states": 1553,
+    "status": "strict_frontier_integer_contract_passed",
+    "strict_mutations_rejected": 30
+  },
+  "known_charged_obligations_this_completed_verifier": {
+    "algebraic_pilot": 8816,
+    "end_to_end_pilot": 374,
+    "frontier_pilot": 6525,
+    "separate_exhaustive_audit_command": 43007,
+    "subtotal": 356358,
+    "three_main_reproductions": 297636
+  },
+  "limits": [
+    "Data-only integration of one completed owned finite Linux run; no new scientific executions.",
+    "Three modes repeat the same bounded inputs, not three independent scientific samples.",
+    "Whole-verifier wall/CPU/RSS and individual command durations were not recorded; reproduction fields are per-process observations.",
+    "The 35,216 events per interpreter and 107,400 coefficient cells are complete audit stdout totals, not separately retained per-event/per-cell tables.",
+    "General proofs remain handwritten; this does not prove rejection of all malformed certificates or all implementation paths.",
+    "Historical results and resource accounting remain unchanged; this receipt adds rather than resets executed charges."
+  ],
+  "origin": {
+    "head_sha": "b54c894c23732ed4bfbae324c9cc37300e02757d",
+    "identity_source": "trusted main-integrator handoff, independently authenticated outside this archive",
+    "integrity_job_conclusion": "success",
+    "local_integration_performed_network_authentication": false,
+    "run_id": 37438859887,
+    "scientific_job_conclusion": "success"
+  },
+  "parse_gate_reported_and_data_counts_reconciled": {
+    "csv_files_parsed": 8,
+    "json_files_parsed": 336
+  },
+  "pilot_measurements": [
+    {
+      "cpu_seconds": 0.011970179,
+      "peak_rss_kib": 18724,
+      "pilot": "algebraic_pilot",
+      "wall_seconds": 0.01206551900000008
+    },
+    {
+      "cpu_seconds": 0.022997310000000003,
+      "peak_rss_kib": 18724,
+      "pilot": "end_to_end_pilot",
+      "wall_seconds": 0.022471467999999106
+    },
+    {
+      "cpu_seconds": 0.008998224999999999,
+      "peak_rss_kib": 18724,
+      "pilot": "frontier_pilot",
+      "wall_seconds": 0.008654783000000776
+    }
+  ],
+  "reproduction_measurements": [
+    {
+      "aggregate_obligations": 99212,
+      "executed_obligations_this_invocation": 99212,
+      "execution": "normal",
+      "peak_rss_kib": 19984,
+      "python_hash_seed": "inherited; not recorded explicitly",
+      "python_optimization": false,
+      "resumed": false,
+      "timed_cpu_seconds": 0.420917673,
+      "wall_seconds": 0.4215397980000013,
+      "whole_process_cpu_seconds": 0.487667572,
+      "workers": 1
+    },
+    {
+      "aggregate_obligations": 99212,
+      "executed_obligations_this_invocation": 99212,
+      "execution": "optimized_seed_17",
+      "peak_rss_kib": 22388,
+      "python_hash_seed": "17",
+      "python_optimization": true,
+      "resumed": false,
+      "timed_cpu_seconds": 0.424326855,
+      "wall_seconds": 0.425347029000001,
+      "whole_process_cpu_seconds": 0.58095911,
+      "workers": 1
+    },
+    {
+      "aggregate_obligations": 99212,
+      "executed_obligations_this_invocation": 99212,
+      "execution": "hash_seed_991",
+      "peak_rss_kib": 19980,
+      "python_hash_seed": "991",
+      "python_optimization": false,
+      "resumed": false,
+      "timed_cpu_seconds": 0.426959971,
+      "wall_seconds": 0.4269287720000001,
+      "whole_process_cpu_seconds": 0.47176084,
+      "workers": 1
+    }
+  ],
+  "restricted_negative": {
+    "checker": {
+      "replay_ticks": 4,
+      "word_checks": 2
+    },
+    "producer": {
+      "minima": [],
+      "pair_candidate_obligations": 1,
+      "separators": [
+        {
+          "context": 0,
+          "cuts": [],
+          "left": 0,
+          "right": 1
+        }
+      ]
+    },
+    "status": "passed"
+  },
+  "scientific_scope": {
+    "F07_earliest_declared_failing_endpoint": 4,
+    "aggregate_obligations_per_campaign": 99212,
+    "case_counts": {
+      "fixed": 51,
+      "frontier": 8,
+      "restricted": 19
+    },
+    "control_outcomes": {
+      "INCOMPLETE": 2,
+      "rejected": 23
+    },
+    "decisions": {
+      "adequate": 51,
+      "insufficient_library": 27
+    },
+    "fixed_decoder_words": 64,
+    "fixed_interpreter_coefficient_cells": 107400,
+    "fixed_interpreter_event_records_per_implementation": 35216,
+    "fixed_restricted_malformed_rejections": 61,
+    "main_cases": 78,
+    "micro_abstract_query_evaluations": 17458,
+    "micro_candidate_comparisons": 13644,
+    "micro_candidate_pairs": 118,
+    "micro_models": 32,
+    "micro_replay_ticks": 8729,
+    "micro_traces": 3250,
+    "missing_cut_negative_models": 29,
+    "three_campaign_repeated_obligations": 297636
+  },
+  "source_audit_reported_by_verifier": {
+    "all_python_files_parsed": 27,
+    "production_assert_statements": 0,
+    "production_python_files_parsed": 19
+  },
+  "status": "completed_Linux_verifier_and_data_correspondence"
+}
