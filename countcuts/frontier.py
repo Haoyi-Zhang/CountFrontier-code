@@ -105,7 +105,13 @@ def opportunities(c, layers, word):
     records = []
     for qi, query in enumerate(c['queries']):
         t, col = query['time'], query['class']
+        seen_departures = set()
         for state in sorted(layers[t]):
+            # Only extraction projects to departure count. Keep the smallest
+            # full state as before; reachability and its parents stay intact.
+            if state[1] in seen_departures:
+                continue
+            seen_departures.add(state[1])
             count = prefixes[state[1]]
             for g, amount in enumerate(count):
                 if col not in pal[g] or len(pal[g]) < 2:

@@ -155,6 +155,17 @@ execution and independently constructed abstraction keys are compared against th
 producer and checker for every admitted coloring, valid service word, and ambient
 cut subset. For missing-cut negatives it also recomputes the earliest semantic
 failure rather than trusting the certificate.
+At each query, opportunity extraction examines one canonical full state per
+departure count. It retains the first state in the original sorted layer, so
+required cuts and earliest witness choices are unchanged. This projection is
+local to extraction: full reachability layers, predecessor paths and transition
+counters are not merged or reduced. The separate checker is unchanged.
+Six pure controls run with `python -B tests/opportunity_projection_regression.py`
+and an explicit scientific-CI step. Test-local concrete service enumeration and
+adjacent-token membership independently check the projection, including duplicate
+queries, inactive palettes, occupancy distinctions and incomplete-budget outcomes.
+These are separate regressions, not a new 78-case campaign receipt or timing claim;
+the retained 16-command verifier record remains historical evidence.
 The schemas allow one to four preloaded FIFO/LIFO source queues, lengths 1–24,
 2–4 classes, horizon 1–48, at most 32 departure-prefix queries, and at most six
 eligible cuts. The downstream queue is initially empty FIFO with backpressure.

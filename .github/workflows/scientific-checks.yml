@@ -31,6 +31,15 @@ jobs:
             python -B verify.py --work-dir "$RUNNER_TEMP/countcuts-check" \
               --logs "$GITHUB_WORKSPACE/scientific-output/commands" \
               >scientific-output/whole-run.stdout 2>scientific-output/whole-run.stderr
+      - name: Pure opportunity-projection regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          ulimit -v 2097152
+          ulimit -t 110
+          timeout --signal=TERM --kill-after=5s 30s \
+            python -B tests/opportunity_projection_regression.py \
+              >scientific-output/opportunity-projection.stdout 2>scientific-output/opportunity-projection.stderr
       - name: Preserve raw outputs even after a failed check
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
